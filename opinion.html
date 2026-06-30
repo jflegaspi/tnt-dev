@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinion - TNT News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #E8DACC;
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: #000000;
+            border-bottom: 3px solid #008B8B;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: auto;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #E8DACC;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3131;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #E8DACC;
+            cursor: pointer;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            background: linear-gradient(135deg, #008B8B 0%, #006666 100%), url('https://picsum.photos/1400/500?random=30');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: #E8DACC;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* MAIN CONTENT */
+        .content-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #E8DACC;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ff3131;
+            display: inline-block;
+        }
+
+        .featured-column {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .featured-main-article {
+            background: #f5f5f5;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .featured-main-image {
+            background: linear-gradient(135deg, #008B8B, #006666);
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8DACC;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .featured-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-size: 16px;
+        }
+
+        .featured-main-content {
+            padding: 30px;
+        }
+
+        .featured-main-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            color: #E8DACC;
+        }
+
+        .featured-main-content p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #E8DACC;
+            margin-bottom: 20px;
+        }
+
+        .featured-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #008B8B, #006666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .author-info {
+            font-size: 13px;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: #E8DACC;
+        }
+
+        .author-date {
+            color: #008B8B;
+            font-size: 12px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .opinion-card {
+            background: #E8DACC;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            border-left: 4px solid #ff3131;
+            padding: 20px;
+        }
+
+        .opinion-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            color: #E8DACC;
+        }
+
+        .opinion-card p {
+            font-size: 12px;
+            color: #E8DACC;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .opinion-by {
+            font-size: 11px;
+            color: #008B8B;
+            font-style: italic;
+        }
+
+        /* ARTICLES GRID */
+        .articles-section {
+            margin-top: 80px;
+        }
+
+        .articles-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .list-article {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 25px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .list-article:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .list-article-image {
+            background: linear-gradient(135deg, #008B8B, #006666);
+            height: 150px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8DACC;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .list-article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-size: 12px;
+        }
+
+        .list-article-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            color: #E8DACC;
+        }
+
+        .list-article-content p {
+            font-size: 13px;
+            color: #E8DACC;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .list-article-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #008B8B;
+        }
+
+        /* NEWSLETTER SECTION */
+        .newsletter-section {
+            background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
+            color: #E8DACC;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 80px 0 60px;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 14px;
+            background-color: #000;
+            border: 1px solid #333333;
+            color: #E8DACC;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: #ff3131;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #ff3131;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #E8DACC;
+            padding: 50px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 80px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #E8DACC;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #E8DACC;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #008B8B;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333333;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .featured-column {
+                grid-template-columns: 1fr;
+            }
+
+            .list-article {
+                grid-template-columns: 1fr;
+            }
+
+            .list-article-image {
+                height: 200px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                display: none;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo"><img src="tnt-new-logo.png" alt="TNT+ Logo"></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="world.html">World</a>
+                <a href="politics.html">Politics</a>
+                <a href="technology.html">Technology</a>
+                <a href="business.html">Business</a>
+                <a href="opinion.html">Opinion</a>
+                <a href="podcast.html">Podcast</a>
+            </nav>
+            <div class="search-icon">🔍</div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h1>Opinion & Analysis</h1>
+    </div>
+
+    <!-- FEATURED OPINION -->
+    <section class="content-section">
+        <div class="section-title">FEATURED PIECE</div>
+        <div class="featured-column">
+            <div class="featured-main-article">
+                <div class="featured-main-image">
+                    <img src="https://picsum.photos/400/350?random=31" alt="Featured">
+                </div>
+                <div class="featured-main-content">
+                    <h2>Why Global Cooperation is Essential for Our Future</h2>
+                    <p>As we face unprecedented challenges, from climate change to pandemic preparedness, the path forward requires unprecedented cooperation between nations, industries, and communities.</p>
+                    <p>The traditional approach of isolated problem-solving has proven inadequate. The interconnected nature of modern challenges demands equally connected solutions.</p>
+                    <div class="featured-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <div class="author-name">James Mitchell</div>
+                            <div class="author-date">Published 2 hours ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="opinion-card">
+                    <h3>The Future of Remote Work</h3>
+                    <p>How permanently changed work patterns will reshape office spaces and urban development.</p>
+                    <div class="opinion-by">— Sarah Chen, 4 hours ago</div>
+                </div>
+                <div class="opinion-card">
+                    <h3>Education in the Digital Age</h3>
+                    <p>Technology opens doors to learning but raises new questions about equitable access and human connection.</p>
+                    <div class="opinion-by">— Dr. Robert Williams, 6 hours ago</div>
+                </div>
+                <div class="opinion-card">
+                    <h3>Reimagining Healthcare Systems</h3>
+                    <p>Post-pandemic reflections on building more resilient and accessible healthcare infrastructure.</p>
+                    <div class="opinion-by">— Dr. Elizabeth Park, 8 hours ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINION ARTICLES LIST -->
+    <section class="content-section articles-section">
+        <div class="section-title">MORE PERSPECTIVES</div>
+        <div class="articles-list">
+            <div class="list-article">
+                <div class="list-article-image">Image</div>
+                <div class="list-article-content">
+                    <h3>The Rise of Sustainable Business Practices</h3>
+                    <p>Companies are discovering that environmental responsibility and profitability aren't mutually exclusive. This shift represents a fundamental change in how we measure business success.</p>
+                    <div class="list-article-meta">
+                        <span>Maria Rodriguez</span>
+                        <span>10 hours ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-article">
+                <div class="list-article-image">Image</div>
+                <div class="list-article-content">
+                    <h3>Technology's Impact on Privacy Rights</h3>
+                    <p>As digital surveillance becomes ubiquitous, we must grapple with balancing security concerns against fundamental privacy rights in our increasingly connected world.</p>
+                    <div class="list-article-meta">
+                        <span>David Anderson</span>
+                        <span>12 hours ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-article">
+                <div class="list-article-image">Image</div>
+                <div class="list-article-content">
+                    <h3>Reimagining Urban Development for Tomorrow</h3>
+                    <p>Cities are evolving to meet modern challenges. Smart design, green spaces, and community engagement are reshaping what 21st century urban life looks like.</p>
+                    <div class="list-article-meta">
+                        <span>Alexander Kumar</span>
+                        <span>14 hours ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-article">
+                <div class="list-article-image">Image</div>
+                <div class="list-article-content">
+                    <h3>The Evolution of Political Discourse</h3>
+                    <p>Social media has transformed how political ideas spread and evolve. Understanding this new landscape is crucial for informed democratic participation.</p>
+                    <div class="list-article-meta">
+                        <span>Lisa Thompson</span>
+                        <span>16 hours ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Opinion Newsletter</h2>
+            <p>Get thought-provoking analysis and expert perspectives delivered to your inbox</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="orig-logo.jpeg" alt="TNT+ Logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <a href="#">Our Story</a>
+                    <a href="#">Our Mission</a>
+                    <a href="#">Our Team</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <a href="#">World</a>
+                    <a href="#">Politics</a>
+                    <a href="#">Business</a>
+                    <a href="#">Technology</a>
+                    <a href="#">Science</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">RSS Feeds</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Archive</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TNT News. All rights reserved.</p>
+            <p>Follow us on social media for daily updates and exclusive content.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: #000000;
+            border-bottom: 3px solid #008B8B;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: auto;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #E8DACC;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3131;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #E8DACC;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #008B8B 0%, #006666 100%), url('https://picsum.photos/1400/500?random=0');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: #E8DACC;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(139, 58, 98, 0.3);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff3131;
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            border-radius: 3px;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3131;
+        }
+
+        /* FEATURED ARTICLE SECTION */
+        .featured-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #E8DACC;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #5ef2f2;
+            display: inline-block;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .featured-main {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .featured-main img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .featured-main-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 40px 30px 30px;
+            color: #E8DACC;
+        }
+
+        .featured-main-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .featured-main-content p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .featured-meta {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .featured-side {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .featured-card {
+            border-left: 4px solid #5ef2f2;
+            padding-left: 20px;
+        }
+
+        .featured-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #E8DACC;
+            line-height: 1.4;
+        }
+
+        .featured-card p {
+            font-size: 13px;
+            color: #E8DACC;
+            margin-bottom: 10px;
+        }
+
+        .featured-card-meta {
+            font-size: 11px;
+            color: #008B8B;
+            font-weight: 700;
+        }
+
+        /* ARTICLES GRID */
+        .articles-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .article-card {
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #333333;
+            border-radius: 10px;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #008B8B, #006666);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8DACC;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .article-content {
+            padding: 20px;
+            background-color: #000;
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: #008B8B;
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        .article-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: #E8DACC;
+        }
+
+        .article-card p {
+            font-size: 13px;
+            color: #E8DACC;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .article-time {
+            font-size: 12px;
+            color: #008B8B;
+        }
+
+        /* NEWSLETTER SECTION */
+        .newsletter-section {
+            background: #000;
+            color: #E8DACC;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 60px 0;
+            border-top: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 14px;
+            background-color: #000;
+            border: 1px solid #333333;
+            color: #E8DACC;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: #ff3131;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #ff3131;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #E8DACC;
+            padding: 50px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 80px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #E8DACC;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #E8DACC;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #008B8B;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333333;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo"><img src="tnt-new-logo.png" alt="TNT+ Logo"></div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="world.html">World</a>
+                <a href="politics.html">Politics</a>
+                <a href="technology.html">Technology</a>
+                <a href="business.html">Business</a>
+                <a href="opinion.html">Opinion</a>
+                <a href="podcast.html">Podcast</a>
+            </nav>
+            <div class="search-icon">🔍</div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stay Informed, Stay Connected</h1>
+            <p>Get the latest news and updates from around the world, delivered directly to you</p>
+            <a href="#" class="cta-button">Subscribe Now</a>
+        </div>
+    </section>
+
+    <!-- FEATURED ARTICLES -->
+    <section class="featured-section">
+        <div class="section-title">FEATURED STORIES</div>
+        <div class="featured-grid">
+            <div class="featured-main">
+                <img src="https://picsum.photos/800/400?random=1" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div class="featured-main-content">
+                    <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
+                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
+                    <div class="featured-meta">Published 2 hours ago • World News</div>
+                </div>
+            </div>
+            <div class="featured-side">
+                <div class="featured-card">
+                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
+                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
+                    <div class="featured-card-meta">4 hours ago</div>
+                </div>
+                <div class="featured-card">
+                    <h3>Markets Rally on Strong Economic Data</h3>
+                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
+                    <div class="featured-card-meta">6 hours ago</div>
+                </div>
+                <div class="featured-card">
+                    <h3>Scientific Breakthrough in Medical Research</h3>
+                    <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
+                    <div class="featured-card-meta">8 hours ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN ARTICLES GRID -->
+    <section class="articles-section">
+        <div class="section-title">LATEST NEWS</div>
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=2" alt="World News" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">World</span>
+                    <h3>International Trade Negotiations Intensify</h3>
+                    <p>Nations engage in complex discussions over tariffs and trade agreements affecting global commerce.</p>
+                    <div class="article-time">1 hour ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=3" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category" style="background-color: #ff3131;">Politics</span>
+                    <h3>New Policy Framework Unveiled for Social Reform</h3>
+                    <p>Government announces comprehensive plan to address key social and economic challenges.</p>
+                    <div class="article-time">3 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=4" alt="Technology" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Technology</span>
+                    <h3>Quantum Computing Reaches Major Milestone</h3>
+                    <p>Scientists achieve breakthrough in quantum computing capabilities with new processor design.</p>
+                    <div class="article-time">5 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=5" alt="Business" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category" style="background-color: #ff3131;">Business</span>
+                    <h3>Startup Ecosystem Experiences Record Growth</h3>
+                    <p>Venture capital funding reaches unprecedented levels as innovation accelerates across industries.</p>
+                    <div class="article-time">7 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=6" alt="Science" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Science</span>
+                    <h3>Space Exploration Reaches New Heights</h3>
+                    <p>Latest mission uncovers groundbreaking discoveries about the universe and deep space.</p>
+                    <div class="article-time">9 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=7" alt="Health" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category" style="background-color: #ff3131;">Health</span>
+                    <h3>Public Health Initiative Shows Positive Results</h3>
+                    <p>New wellness programs demonstrate significant impact on community health outcomes.</p>
+                    <div class="article-time">11 hours ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the most important news delivered straight to your inbox every morning</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="orig-logo.jpeg" alt="TNT+ Logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <a href="#">Our Story</a>
+                    <a href="#">Our Mission</a>
+                    <a href="#">Our Team</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <a href="#">World</a>
+                    <a href="#">Politics</a>
+                    <a href="#">Business</a>
+                    <a href="#">Technology</a>
+                    <a href="#">Science</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">RSS Feeds</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Archive</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 News Portal. All rights reserved.</p>
+            <p>Follow us on social media for daily updates and exclusive content.</p>
+        </div>
+    </footer>
+</body>
+</html>
