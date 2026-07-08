@@ -13,15 +13,12 @@
         <div class="header-container">
             <div class="logo"><a href="index.html"><img src="images/tnt 2 Hi Res.png" alt="TNT+ Logo"></a></div>
             <nav>
-                <a href="index.html">Breaking</a>
-                <a href="world.html">Top 10 News</a>
                 <a href="politics.html">Opinyon!</a>
                 <a href="business.html">Business</a>
                 <a href="technology.html">Sports</a>
                 <a href="podcast.html">Podcasts</a>
                 <a href="opinion.html">Reels</a>
                 <a href="opinion.html">Dokyu</a>
-                <a href="opinion.html">Juan News</a>
                 <a href="opinion.html">Atbp</a>
             </nav>
             <div class="search-icon">🔍</div>
@@ -37,6 +34,303 @@
         </div>
     </section>
     
+    <!-- BREAKING -->
+    <section class="featured-section">
+        <div class="section-title">BREAKING NEWS</div>
+        <div class="featured-grid">            
+            <!-- Main Highlight Card -->
+            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
+                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div class="featured-main-content">
+                    <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
+                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
+                    <div class="featured-meta">Published 2 hours ago • World News</div>
+                </div>
+            </div>
+            <!-- Side Text Cards -->
+            <div class="featured-side">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
+                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
+                    <div class="featured-card-meta">4 hours ago</div>
+                </div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Markets Rally on Strong Economic Data</h3>
+                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
+                    <div class="featured-card-meta">6 hours ago</div>
+                </div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Scientific Breakthrough in Medical Research</h3>
+                    <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
+                    <div class="featured-card-meta">8 hours ago</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Local Hover Styles for Kwentong Kalye -->
+        <style>
+            .interactive-hover-block:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
+            }
+            .interactive-hover-side:hover {
+                border-left-color: #ff3131 !important; /* Changes accent bar to Red */
+                transform: translateX(6px); /* Nudges text elegantly to the right */
+            }
+        </style>
+    </section>
+
+  <!-- TOP 10 NEWS -->
+    <section class="articles-section" style="overflow: hidden; position: relative;">
+        <!-- Section Header with True Slider Controls -->
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span>TOP 10 NEWS</span>
+            <div class="top10-carousel-controls" style="display: flex; gap: 8px;">
+                <button onclick="scrollTop10(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">◀</button>
+                <button onclick="scrollTop10(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">▶</button>
+            </div>
+        </div>
+
+        <!-- Mask Viewport Window (No scrolling allowed) -->
+        <div style="width: 100%; overflow: hidden;">
+            
+            <!-- Sliding Track Container -->
+            <div id="top10-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
+                
+                <!-- Card 1 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=101" alt="Featured" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">World News</span>
+                        <h3>Global Summit Addresses Climate Crisis with New Initiatives</h3>
+                        <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
+                        <div class="article-time">Published 2 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=102" alt="AI Partnership" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Technology</span>
+                        <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
+                        <p>Major technology companies join forces to develop ethical artificial intelligence standards across industries.</p>
+                        <div class="article-time">4 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=103" alt="Markets" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Business</span>
+                        <h3>Markets Rally on Strong Economic Data</h3>
+                        <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
+                        <div class="article-time">6 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=104" alt="Medical Breakthrough" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Science</span>
+                        <h3>Scientific Breakthrough in Medical Research</h3>
+                        <p>Researchers announce major advancement in treatment architectures for previously untreatable diseases.</p>
+                        <div class="article-time">8 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=105" alt="Space" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Exploration</span>
+                        <h3>Next-Generation Lunar Rover Deep Workspace Test Complete</h3>
+                        <p>Engineers clear off-world vehicles for enhanced terrain navigation parameters ahead of target launch updates.</p>
+                        <div class="article-time">10 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=106" alt="Renewable Energy" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Sustainability</span>
+                        <h3>Massive Clean Energy Storage Node Integrates Into Grid</h3>
+                        <p>New localized high-capacity battery networks step up regional power reliability windows successfully.</p>
+                        <div class="article-time">12 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=107" alt="Global Trade" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Economy</span>
+                        <h3>New Maritime Corridors Open Up Global Shipping Routes</h3>
+                        <p>International trade agreements unlock faster maritime logistics options, bypassing congested traditional channels.</p>
+                        <div class="article-time">14 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=108" alt="Cyber Security" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Cybersecurity</span>
+                        <h3>Next-Gen Firewalls Stop Massive Multi-Vector Cyber Attack</h3>
+                        <p>Defense networks successfully counter coordinated infrastructure breaches without compromising user data sectors.</p>
+                        <div class="article-time">16 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=109" alt="Archeology" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Archaeology</span>
+                        <h3>Ancient Urban Trade Hub Unearthed in Deep Forest Excavation</h3>
+                        <p>Sub-surface remote sensing arrays locate remnants of a remarkably preserved pre-modern trade citadel.</p>
+                        <div class="article-time">18 hours ago</div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=110" alt="Aviation Tech" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Aviation</span>
+                        <h3>Supersonic Commercial Jet Prototype Clears Low-Noise Flight Trials</h3>
+                        <p>Aerodynamic testing data confirms low-boom structural design parameters meet international flight standards.</p>
+                        <div class="article-time">Yesterday</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Hover Stylings -->
+        <style>
+            .top10-carousel-controls button:hover {
+                background: #ff3131 !important;
+            }
+        </style>
+
+        <!-- Script-Driven Sliding Engine -->
+        <script>
+            let currentTop10Index = 0;
+            const totalTop10Cards = 10; // Updated to match 10 articles
+            const visibleTop10Cards = 2;
+            const maxTop10Index = totalTop10Cards - visibleTop10Cards; // Adjusts limits smoothly to allow 8 clicks
+
+            function scrollTop10(direction) {
+                currentTop10Index += direction;
+                
+                // Boundaries check
+                if (currentTop10Index < 0) {
+                    currentTop10Index = 0;
+                }
+                if (currentTop10Index > maxTop10Index) {
+                    currentTop10Index = maxTop10Index;
+                }
+                
+                const track = document.getElementById('top10-track');
+                const card = track.querySelector('.article-card');
+                
+                // Measure card width dynamically + the 20px layout gap
+                const stepWidth = card.getBoundingClientRect().width + 20; 
+                
+                // Shift the container tracking pane
+                track.style.transform = `translateX(-${currentTop10Index * stepWidth}px)`;
+            }
+
+            // Recalculates slider track spacing cleanly on browser adjustments
+            window.addEventListener('resize', () => {
+                scrollTop10(0);
+            });
+        </script>
+    </section>
+
+   <!-- JUAN NEWS -->
+    <section class="articles-section">
+        <div class="section-title">JUAN NEWS</div>
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=121" alt="Local News" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">National</span>
+                    <h3>New Infrastructure Projects Set to Standardize Regional Transit</h3>
+                    <p>Government planners approve secondary transport networks to ease congestion across provincial capitals.</p>
+                    <div class="article-time">Published 2 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=122" alt="Community" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Community</span>
+                    <h3>Grassroots Agriculture Program Expands to City Markets</h3>
+                    <p>Urban cooperatives launch direct-to-consumer pipelines, lowering prices for basic agricultural commodities.</p>
+                    <div class="article-time">4 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=123" alt="Education" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Education</span>
+                    <h3>Digital Literacy Hubs Open in Remote Municipalities</h3>
+                    <p>Public-private partnerships complete construction on specialized training facilities for rural students.</p>
+                    <div class="article-time">6 hours ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL WIDTH VIDEO PLAYER (NO INTERACTION) -->
+    <section class="featured-section" style="margin-bottom: 40px;">
+        <div class="video-container" style="width: 100%; background: #000; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+            <video autoplay loop muted playsinline style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; pointer-events: none;">
+                <source src="images/tnt 1-final.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- DOKYU -->
+    <section class="articles-section">
+        <div class="section-title">DOKYU</div>
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=31" alt="Climate Crisis" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">World News</span>
+                    <h3>Global Summit Addresses Climate Crisis with New Initiatives</h3>
+                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
+                    <div class="article-time">Published 2 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=32" alt="AI Partnership" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Technology</span>
+                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
+                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
+                    <div class="article-time">4 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=33" alt="Markets Rally" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Business</span>
+                    <h3>Markets Rally on Strong Economic Data</h3>
+                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
+                    <div class="article-time">6 hours ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
     <!-- MY SAY SECTION -->
     <section class="featured-section">
         <div class="section-title">My Say</div>
@@ -83,16 +377,6 @@
                     <div class="article-time">Luzon Pride</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-   <!-- FULL WIDTH VIDEO PLAYER (NO INTERACTION) -->
-    <section class="featured-section" style="margin-bottom: 40px;">
-        <div class="video-container" style="width: 100%; background: #000; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-            <video autoplay loop muted playsinline style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; pointer-events: none;">
-                <source src="images/tnt 1-final.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
         </div>
     </section>
 
@@ -273,7 +557,7 @@
         </script>
     </section>
 
-<!-- LOVE HURTS -->
+    <!-- LOVE HURTS -->
     <section class="featured-section">
         <div class="section-title">Love Hurts</div>
         <div class="featured-grid">
@@ -322,7 +606,7 @@
         </style>
     </section>
 
-   <!-- HistorYan: This Week in History -->
+    <!-- HistorYan: This Week in History -->
     <section class="articles-section">
         <div class="section-title">HistorYan</div>
         <div class="articles-grid">
@@ -407,7 +691,7 @@
         </div>
     </section>
 
-   <!-- DI-BATE -->
+    <!-- DI-BATE -->
     <section class="articles-section" style="overflow: hidden; position: relative;">
         <!-- Section Header with True Slider Controls -->
         <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
