@@ -5,532 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Portal - Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #000;
-            font-family: 'Roboto Condensed', sans-serif;
-            color: #333333;
-            line-height: 1.6;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            background-color: #000000;
-            border-bottom: 3px solid #008B8B;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            height: auto;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #E8DACC;
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff3131;
-        }
-
-        .search-icon {
-            font-size: 20px;
-            color: #E8DACC;
-            cursor: pointer;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, #008B8B 0%, #006666 100%), url('https://picsum.photos/1400/500?random=0');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            color: #E8DACC;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background-color: rgba(139, 58, 98, 0.3);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 52px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #ff3131;
-            color: #fff;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-            border-radius: 3px;
-        }
-
-        .cta-button:hover {
-            background-color: #ff3131;
-        }
-
-        /* FEATURED ARTICLE SECTION */
-        .featured-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #E8DACC;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #5ef2f2;
-            display: inline-block;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .featured-main {
-            position: relative;
-            overflow: hidden;
-            border-radius: 5px;
-        }
-
-        .featured-main img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .featured-main-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 40px 30px 30px;
-            color: #E8DACC;
-        }
-
-        .featured-main-content h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .featured-main-content p {
-            font-size: 14px;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .featured-meta {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .featured-side {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .featured-card {
-            border-left: 4px solid #5ef2f2;
-            padding-left: 20px;
-        }
-
-        .featured-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #E8DACC;
-            line-height: 1.4;
-        }
-
-        .featured-card p {
-            font-size: 13px;
-            color: #E8DACC;
-            margin-bottom: 10px;
-        }
-
-        .featured-card-meta {
-            font-size: 11px;
-            color: #008B8B;
-            font-weight: 700;
-        }
-
-        /* ARTICLES GRID */
-        .articles-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .article-card {
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            border: 1px solid #333333;
-            border-radius: 10px;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #008B8B, #006666);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #E8DACC;
-            font-size: 12px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .article-content {
-            padding: 20px;
-            background-color: #000;
-        }
-
-        .article-category {
-            display: inline-block;
-            background-color: #008B8B;
-            color: #fff;
-            padding: 4px 10px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
-
-        .article-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.4;
-            color: #E8DACC;
-        }
-
-        .article-card p {
-            font-size: 13px;
-            color: #E8DACC;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .article-time {
-            font-size: 12px;
-            color: #008B8B;
-        }
-
-        /* NEWSLETTER SECTION */
-        .newsletter-section {
-            background: #000;
-            color: #E8DACC;
-            padding: 50px 20px;
-            text-align: center;
-            margin: 60px 0;
-            border-top: 1px solid #333333;
-            border-bottom: 1px solid #333333;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-section p {
-            font-size: 16px;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 3px;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 14px;
-            background-color: #000;
-            border: 1px solid #333333;
-            color: #E8DACC;
-        }
-
-        .newsletter-form button {
-            padding: 15px 30px;
-            background-color: #ff3131;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background-color: #ff3131;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #000000;
-            color: #E8DACC;
-            padding: 50px 20px;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 80px;
-            margin-bottom: 40px;
-            align-items: flex-start;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .footer-column h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            color: #E8DACC;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-column a {
-            display: block;
-            color: #E8DACC;
-            text-decoration: none;
-            font-size: 13px;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: #008B8B;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333333;
-            padding-top: 30px;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .footer-bottom p {
-            margin-bottom: 15px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .articles-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            nav {
-                gap: 15px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            nav {
-                gap: 10px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <div class="header-container">
-            <div class="logo"><img src="tnt-new-logo.png" alt="TNT+ Logo"></div>
+            <div class="logo"><a href="home.html"><img src="images/tnt-new-logo.png" alt="TNT+ Logo"></a></div>
             <nav>
-                <a href="home.html">Home</a>
-                <a href="world.html">World</a>
-                <a href="politics.html">Politics</a>
-                <a href="technology.html">Technology</a>
+                <a href="home.html">Breaking</a>
+                <a href="world.html">Top 10 News</a>
+                <a href="politics.html">Opinyon!</a>
                 <a href="business.html">Business</a>
-                <a href="opinion.html">Opinion</a>
-                <a href="podcast.html">Podcast</a>
+                <a href="technology.html">Sports</a>
+                <a href="podcast.html">Podcasts</a>
+                <a href="opinion.html">Reels</a>
+                <a href="opinion.html">Dokyu</a>
+                <a href="opinion.html">Juan News</a>
+                <a href="opinion.html">Atbp</a>
             </nav>
             <div class="search-icon">🔍</div>
         </div>
@@ -544,117 +36,500 @@
             <a href="#" class="cta-button">Subscribe Now</a>
         </div>
     </section>
-
-    <!-- FEATURED ARTICLES -->
+    
+    <!-- MY SAY SECTION -->
     <section class="featured-section">
-        <div class="section-title">FEATURED STORIES</div>
+        <div class="section-title">My Say</div>
+        <div class="featured-card-horizontal">
+            <img src="https://picsum.photos/1000/400?random=21" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-card-content">
+                <span class="sponsor-tag" style="font-size: 0.8rem; color: #ff3131; font-weight: bold; text-transform: uppercase;">Sponsored Content</span>
+                <h2>The Future of Sustainable Energy in Southeast Asia</h2>
+                <p>Prominent industry leaders outline how public-private partnerships are accelerating green infrastructure to power the next generation of business.</p>
+                <div class="featured-card-meta">By Manuel V. Pangilinan • Business & Innovation</div>
+                <a href="#" class="featured-cta-button">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DITO PO SA AMIN SECTION -->
+    <section class="articles-section">
+        <div class="section-title">DITO PO SA AMIN</div>
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=22" alt="Batanes" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Destinations</span>
+                    <h3>The Breathtaking Slopes of Batanes</h3>
+                    <p>Discover why this northern paradise remains a dream destination for eco-conscious travelers looking to disconnect.</p>
+                    <div class="article-time">Regional Pride</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=23" alt="Sinulog" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category" style="background-color: #ff3131;">Festivals</span>
+                    <h3>Sinulog Festival Returns with Vibrant Energy</h3>
+                    <p>Cebu updates its grand cultural showcase, marrying deep-seated faith with colorful street dancing spectacles.</p>
+                    <div class="article-time">Visayas Pride</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=24" alt="Pampanga Cuisine" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Culinary</span>
+                    <h3>Pampanga's Hidden Kitchen Treasures</h3>
+                    <p>A culinary map exploring why this Central Luzon province strictly holds the title of the Culinary Capital.</p>
+                    <div class="article-time">Luzon Pride</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KWENTONG KALYE -->
+    <section class="featured-section">
+        <div class="section-title">KWENTONG KALYE</div>
         <div class="featured-grid">
-            <div class="featured-main">
-                <img src="https://picsum.photos/800/400?random=1" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            
+            <!-- Main Highlight Card -->
+            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
+                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                 <div class="featured-main-content">
                     <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
                     <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
                     <div class="featured-meta">Published 2 hours ago • World News</div>
                 </div>
             </div>
+            
+            <!-- Side Text Cards -->
             <div class="featured-side">
-                <div class="featured-card">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
                     <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
                     <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
                     <div class="featured-card-meta">4 hours ago</div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
                     <h3>Markets Rally on Strong Economic Data</h3>
                     <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
                     <div class="featured-card-meta">6 hours ago</div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
                     <h3>Scientific Breakthrough in Medical Research</h3>
                     <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
                     <div class="featured-card-meta">8 hours ago</div>
                 </div>
             </div>
+
         </div>
+
+        <!-- Local Hover Styles for Kwentong Kalye -->
+        <style>
+            .interactive-hover-block:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
+            }
+            .interactive-hover-side:hover {
+                border-left-color: #ff3131 !important; /* Changes accent bar to Red */
+                transform: translateX(6px); /* Nudges text elegantly to the right */
+            }
+        </style>
     </section>
 
-    <!-- MAIN ARTICLES GRID -->
+    <!-- MAY K KA -->
+    <section class="articles-section" style="overflow: hidden; position: relative;">
+        <!-- Section Header with True Slider Controls -->
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span>MAY K KA!</span>
+            <div class="mayk-carousel-controls" style="display: flex; gap: 8px;">
+                <button onclick="scrollMayK(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">◀</button>
+                <button onclick="scrollMayK(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">▶</button>
+            </div>
+        </div>
+
+        <!-- Mask Viewport Window (No scrolling allowed) -->
+        <div style="width: 100%; overflow: hidden;">
+            
+            <!-- Sliding Track Container -->
+            <div id="mayk-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
+                
+                <!-- Card 1 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=71" alt="Labor Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Employee Rights</span>
+                        <h3>Know Your Rights: A Guide to the Labor Code on Overtime Pay</h3>
+                        <p>Demystifying regular vs. holiday premium pay rates to make sure you are compensated fairly for every extra hour worked.</p>
+                        <div class="article-time">Legal Desk</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=72" alt="Property Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category" style="background-color: #ff3131;">Property Law</span>
+                        <h3>Tenant Rights: Can Your Landlord Suddenly Evict You?</h3>
+                        <p>Understanding the strict protections provided under the Rent Control Act and the proper legal grace periods required.</p>
+                        <div class="article-time">Housing Protections</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=73" alt="Civil Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Civil Procedures</span>
+                        <h3>Small Claims Court: Settling Money Disputes Fast</h3>
+                        <p>How to legally recover minor outstanding financial debts without hiring expensive lawyers or entering prolonged trials.</p>
+                        <div class="article-time">Legal Remedies</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=74" alt="Data Privacy" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category" style="background-color: #ff3131;">Consumer Protection</span>
+                        <h3>Data Privacy Act: Protecting Your Online Info</h3>
+                        <p>What immediate steps you can take when unverified text groups access your private details or spam your mobile inbox.</p>
+                        <div class="article-time">Digital Rights</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=75" alt="Cyber Libel" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Criminal Law</span>
+                        <h3>Cyberlibel Scope: What Counts as Online Defamation?</h3>
+                        <p>Navigating the thin legal boundaries separating protected free public speech from punishable malicious commentary online.</p>
+                        <div class="article-time">Social Media Watch</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=76" alt="Lemon Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category" style="background-color: #ff3131;">Consumer Rights</span>
+                        <h3> Lemon Law & Defective Item Return Safeguards</h3>
+                        <p>Your explicit protections when dealing with faulty purchases, and understanding the "No Return, No Exchange" policy ban.</p>
+                        <div class="article-time">Fair Trade Desk</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Hover Stylings -->
+        <style>
+            .mayk-carousel-controls button:hover {
+                background: #ff3131 !important;
+            }
+        </style>
+
+        <!-- Script-Driven Sliding Engine -->
+        <script>
+            let currentMayKIndex = 0;
+            const totalMayKCards = 6;
+            const visibleMayKCards = 2;
+            const maxMayKIndex = totalMayKCards - visibleMayKCards; // Total shifting steps available
+
+            function scrollMayK(direction) {
+                currentMayKIndex += direction;
+                
+                // Boundaries check
+                if (currentMayKIndex < 0) {
+                    currentMayKIndex = 0;
+                }
+                if (currentMayKIndex > maxMayKIndex) {
+                    currentMayKIndex = maxMayKIndex;
+                }
+                
+                const track = document.getElementById('mayk-track');
+                const card = track.querySelector('.article-card');
+                
+                // Measure card width dynamically + the 20px layout gap
+                const stepWidth = card.getBoundingClientRect().width + 20; 
+                
+                // Shift the container tracking pane
+                track.style.transform = `translateX(-${currentMayKIndex * stepWidth}px)`;
+            }
+
+            // Recalculates slider track spacing cleanly on browser adjustments
+            window.addEventListener('resize', () => {
+                scrollMayK(0);
+            });
+        </script>
+    </section>
+
+<!-- LOVE HURTS -->
+    <section class="featured-section">
+        <div class="section-title">Love Hurts</div>
+        <div class="featured-grid">
+            
+            <!-- Main Highlight Card -->
+            <div class="featured-main love-hover-main" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
+                <img src="https://picsum.photos/800/400?random=28" alt="Self-Love" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div class="featured-main-content">
+                    <h2>Reclaiming Identity After a Hard Breakup</h2>
+                    <p>Practical steps to rebuild your confidence, rediscover personal joy, and establish independent milestones when a long-term partner leaves your life.</p>
+                    <div class="featured-meta">Healing • Emotional Wellness</div>
+                </div>
+            </div>
+            
+            <!-- Side Text Cards -->
+            <div class="featured-side">
+                <div class="featured-card love-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Is It Time to Walk Away? Red Flags in Romance</h3>
+                    <p>When fighting for a relationship starts costing you your inner peace, mental health, and foundational self-worth.</p>
+                    <div class="featured-card-meta">Relationship Advice</div>
+                </div>
+                <div class="featured-card love-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Bridging Time Zones in Long-Distance Love</h3>
+                    <p>Communication adjustments and solid trust milestones that keep overseas partnerships resilient long-term.</p>
+                    <div class="featured-card-meta">LDR Dynamics</div>
+                </div>
+                <div class="featured-card love-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Dealing with Toxic Parental Expectations</h3>
+                    <p>How to balance generational filial duties while establishing mature personal boundaries for your own future path.</p>
+                    <div class="featured-card-meta">Family Columns</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Local Hover Styles for Love Hurts -->
+        <style>
+            .love-hover-main:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
+            }
+            .love-hover-side:hover {
+                border-left-color: #ff3131 !important; /* Transforms left border indicator to red */
+                transform: translateX(6px); /* Nudges text column slightly to the right */
+            }
+        </style>
+    </section>
+
+   <!-- HistorYan: This Week in History -->
     <section class="articles-section">
-        <div class="section-title">LATEST NEWS</div>
+        <div class="section-title">HistorYan</div>
         <div class="articles-grid">
+            <!-- JULY 5 -->
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=2" alt="World News" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=61" alt="Liberation of the Philippines" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">World</span>
-                    <h3>International Trade Negotiations Intensify</h3>
-                    <p>Nations engage in complex discussions over tariffs and trade agreements affecting global commerce.</p>
-                    <div class="article-time">1 hour ago</div>
+                    <span class="article-category">July 5, 1945</span>
+                    <h3>The Liberation Communique</h3>
+                    <p style="margin-bottom: 0;">
+                        • Gen. Douglas MacArthur declares the full liberation of the Philippines.<br>
+                        • Official announcement marks the conclusion of major WWII combat operations.<br>
+                        • Honors the combined victory of allied forces and local guerrilla movements.
+                    </p>
                 </div>
             </div>
+            <!-- JULY 7 -->
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=3" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=62" alt="Founding of the Katipunan" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category" style="background-color: #ff3131;">Politics</span>
-                    <h3>New Policy Framework Unveiled for Social Reform</h3>
-                    <p>Government announces comprehensive plan to address key social and economic challenges.</p>
-                    <div class="article-time">3 hours ago</div>
+                    <span class="article-category" style="background-color: #ff3131;">July 7, 1892</span>
+                    <h3>The Founding of the Katipunan</h3>
+                    <p style="margin-bottom: 0;">
+                        • Andres Bonifacio establishes the underground secret society (KKK) in San Nicolas, Manila.<br>
+                        • Formed on the exact day Jose Rizal's exile to Dapitan was made public.<br>
+                        • Marks the pivotal shift from peaceful reform to armed revolution.
+                    </p>
                 </div>
             </div>
+            <!-- JULY 7 (BIRTHDAY) -->
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=4" alt="Technology" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=63" alt="Isabelo de los Reyes" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">Technology</span>
-                    <h3>Quantum Computing Reaches Major Milestone</h3>
-                    <p>Scientists achieve breakthrough in quantum computing capabilities with new processor design.</p>
-                    <div class="article-time">5 hours ago</div>
+                    <span class="article-category">July 7, 1864</span>
+                    <h3>Birth of Isabelo de los Reyes</h3>
+                    <p style="margin-bottom: 0;">
+                        • Born "Don Belong" in Vigan, Ilocos Sur to prominent poetess Leona Florentino.<br>
+                        • Celebrated historically as the "Father of Filipino Socialism."<br>
+                        • Co-founded the Philippine Independent Church (Aglipayan Church).
+                    </p>
                 </div>
             </div>
+            <!-- JULY 10 -->
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=5" alt="Business" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=64" alt="Constitutional Convention" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category" style="background-color: #ff3131;">Business</span>
-                    <h3>Startup Ecosystem Experiences Record Growth</h3>
-                    <p>Venture capital funding reaches unprecedented levels as innovation accelerates across industries.</p>
-                    <div class="article-time">7 hours ago</div>
+                    <span class="article-category" style="background-color: #ff3131;">July 10, 1934</span>
+                    <h3>The 1934 Constitutional Convention</h3>
+                    <p style="margin-bottom: 0;">
+                        • Nationwide election of 202 historic delegates is conducted across the islands.<br>
+                        • Tasked with drafting the framework for the historic 1935 Constitution.<br>
+                        • Laid down the legal foundation for the upcoming Commonwealth Government.
+                    </p>
                 </div>
             </div>
+            <!-- JULY 11 (VALENZUELA) -->
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=6" alt="Science" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=65" alt="Dr. Pio Valenzuela" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">Science</span>
-                    <h3>Space Exploration Reaches New Heights</h3>
-                    <p>Latest mission uncovers groundbreaking discoveries about the universe and deep space.</p>
-                    <div class="article-time">9 hours ago</div>
+                    <span class="article-category">July 11, 1869</span>
+                    <h3>Birth of Dr. Pío Valenzuela</h3>
+                    <p style="margin-bottom: 0;">
+                        • Born in Polo, Bulacan—the municipality later renamed Valenzuela City in his honor.<br>
+                        • Served as an essential physician and inner secret chamber leader of the Katipunan.<br>
+                        • Managed the printing and logistics of the revolutionary paper, *Ang Kalayaan*.
+                    </p>
                 </div>
             </div>
+            <!-- JULY 11 (DEL PILAR) -->
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=7" alt="Health" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=66" alt="Gen Pio del Pilar" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category" style="background-color: #ff3131;">Health</span>
-                    <h3>Public Health Initiative Shows Positive Results</h3>
-                    <p>New wellness programs demonstrate significant impact on community health outcomes.</p>
-                    <div class="article-time">11 hours ago</div>
+                    <span class="article-category" style="background-color: #ff3131;">July 11, 1860</span>
+                    <h3>Birth of Gen. Pío del Pilar</h3>
+                    <p style="margin-bottom: 0;">
+                        • Born in Culi-culi, San Pedro de Macati (modern-day Pio del Pilar, Makati City).<br>
+                        • Rose to prominence as one of Emilio Aguinaldo's most trusted frontline generals.<br>
+                        • Actively distributed copies of Jose Rizal's *Noli Me Tángere* prior to the uprising.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section">
-        <div class="newsletter-content">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get the most important news delivered straight to your inbox every morning</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
+   <!-- DI-BATE -->
+    <section class="articles-section" style="overflow: hidden; position: relative;">
+        <!-- Section Header with True Slider Controls -->
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span>DI-BATE</span>
+            <div class="carousel-controls" style="display: flex; gap: 8px;">
+                <button onclick="scrollDebate(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">◀</button>
+                <button onclick="scrollDebate(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">▶</button>
+            </div>
         </div>
+
+        <!-- Mask Viewport Window (No scrolling allowed) -->
+        <div style="width: 100%; overflow: hidden;">
+            
+            <!-- Sliding Track Container -->
+            <div id="debate-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
+                
+                <!-- Card 1 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=51" alt="Jeepney" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Public Transport</span>
+                        <h3>Jeepney Modernization Program</h3>
+                        <p style="font-style: italic;">"We need safer transport, but down-to-earth drivers shouldn't shoulder extreme debts to acquire units."</p>
+                        <div class="article-time">— Juan, Commuter</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=52" alt="Office" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category" style="background-color: #ff3131;">Labor Laws</span>
+                        <h3>The 4-Day Work Week Shift</h3>
+                        <p style="font-style: italic;">"Consolidated hours increase traffic fatigue. I would prefer hybrid flexibility options over longer shifts."</p>
+                        <div class="article-time">— Grace, Office Worker</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=53" alt="School" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Education</span>
+                        <h3>Returning to June School Calendar</h3>
+                        <p style="font-style: italic;">"Our classrooms cannot handle extreme peak summer heat. Returning to the traditional timeline protects students."</p>
+                        <div class="article-time">— Teacher Ana, Public School</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=54" alt="Plastic Ban" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category" style="background-color: #ff3131;">Urban Living</span>
+                        <h3>Strict Single-Use Plastic Bans</h3>
+                        <p style="font-style: italic;">"Bans only function if markets give affordable alternatives. Right now, alternative items cost consumers more."</p>
+                        <div class="article-time">— Mang Tomas, Market Vendor</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-box: 0;">
+                    <img src="https://picsum.photos/400/200?random=55" alt="AI Class" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Tech & Safety</span>
+                        <h3>AI Tools in University Classrooms</h3>
+                        <p style="font-style: italic;">"Banning artificial intelligence completely is impossible. Faculty should focus on changing test designs instead."</p>
+                        <div class="article-time">— David, College Student</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=56" alt="Cashless" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category" style="background-color: #ff3131;">Econ Watch</span>
+                        <h3>Cashless Markets vs. Hard Cash</h3>
+                        <p style="font-style: italic;">"Digital payments speed up queues, but system outages present heavy blocks for daily micro-transactions."</p>
+                        <div class="article-time">— Sarah, Small Business Owner</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Hover Stylings -->
+        <style>
+            .carousel-controls button:hover {
+                background: #ff3131 !important;
+            }
+        </style>
+
+        <!-- Script-Driven Sliding Engine -->
+        <script>
+            let currentDebateIndex = 0;
+            const totalDebateCards = 6;
+            const visibleCards = 2;
+            const maxDebateIndex = totalDebateCards - visibleCards; // Max steps you can advance (4 steps total)
+
+            function scrollDebate(direction) {
+                currentDebateIndex += direction;
+                
+                // Hard stops at ends
+                if (currentDebateIndex < 0) {
+                    currentDebateIndex = 0;
+                }
+                if (currentDebateIndex > maxDebateIndex) {
+                    currentDebateIndex = maxDebateIndex;
+                }
+                
+                const track = document.getElementById('debate-track');
+                const card = track.querySelector('.article-card');
+                
+                // Read exact layout pixel widths dynamically + 20px gap
+                const stepWidth = card.getBoundingClientRect().width + 20; 
+                
+                // Slide the track via hardware accelerated hardware transitions
+                track.style.transform = `translateX(-${currentDebateIndex * stepWidth}px)`;
+            }
+
+            // Recalculates and maintains alignment perfectly if the browser window changes sizes
+            window.addEventListener('resize', () => {
+                scrollDebate(0);
+            });
+        </script>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="orig-logo.jpeg" alt="TNT+ Logo">
+                <img src="images/tnt 1 Hi Res.png" alt="TNT+ Logo">
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -689,7 +564,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 News Portal. All rights reserved.</p>
+            <p>&copy; 2026 News Portal. All rights reserved.</p>
             <p>Follow us on social media for daily updates and exclusive content.</p>
         </div>
     </footer>
