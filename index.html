@@ -6,8 +6,6 @@
     <title>News Portal - Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-  
 </head>
 <body>
     <header>
@@ -82,109 +80,173 @@
                     <div class="featured-card-meta">8 hours ago</div>
                 </div>
             </div>
-
         </div>
-
-        <style>
-            .interactive-hover-block:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
-            }
-            .interactive-hover-side:hover {
-                border-left-color: #008B8B !important; /* Changes accent bar to Teal */
-                transform: translateX(6px); /* Nudges text elegantly to the right */
-            }
-        </style>
     </section>
 
-    <section class="featured-section">
-        <div class="section-title">TOP 10 NEWS</div>
-        <div class="featured-grid">
-            
-            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
-                <div class="featured-main-content">
-                    <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
-                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
-                    <div class="featured-meta">Published 2 hours ago • World News</div>
-                </div>
+    <section class="articles-section" style="overflow: hidden; position: relative;">
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span>TOP 10 NEWS</span>
+            <div class="top10-carousel-controls" style="display: flex; gap: 8px;">
+                <button onclick="scrollTop10(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">◀</button>
+                <button onclick="scrollTop10(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">▶</button>
             </div>
-            
-            <div class="featured-side">
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
-                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
-                    <div class="featured-card-meta">4 hours ago</div>
-                </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Markets Rally on Strong Economic Data</h3>
-                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
-                    <div class="featured-card-meta">6 hours ago</div>
-                </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Scientific Breakthrough in Medical Research</h3>
-                    <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
-                    <div class="featured-card-meta">8 hours ago</div>
-                </div>
-            </div>
-
         </div>
 
-        <style>
-            .interactive-hover-block:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
+        <div style="width: 100%; overflow: hidden;">
+            <div id="top10-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
+                
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=201" alt="Quantum Computing" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#1 • Technology</span>
+                        <h3>Quantum Computing Reaches Commercial Viability</h3>
+                        <p>Major labs have announced the first commercially available quantum processors capable of solving complex logistics instantly.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=202" alt="Renewable Grid" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#2 • Environment</span>
+                        <h3>Global Renewable Energy Grid Connected</h3>
+                        <p>For the first time, three continents have linked their renewable energy storage to prevent regional blackouts.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=203" alt="Smart Cities" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#3 • Urban Planning</span>
+                        <h3>Smart Cities Reaching New Milestones</h3>
+                        <p>Urban centers globally are integrating automated traffic and waste management systems powered by municipal AI.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=204" alt="Space Tourism" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#4 • Space Exploration</span>
+                        <h3>First Commercial Hotel in Orbit Opens</h3>
+                        <p>Space tourism takes a giant leap as the first low-earth-orbit hotel welcomes its first batch of civilian guests.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=205" alt="Medical Nanobots" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#5 • Health</span>
+                        <h3>Nanobot Trials Show 99% Success Rate</h3>
+                        <p>Microscopic medical robots have successfully targeted and cleared arterial blockages in phase 3 human trials.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=206" alt="Ocean Cleanup" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#6 • Conservation</span>
+                        <h3>Great Pacific Garbage Patch Reduced by Half</h3>
+                        <p>A massive international fleet utilizing automated nets has successfully removed 50% of the surface plastic.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=207" alt="Lab Meat" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#7 • Food Science</span>
+                        <h3>The Rise of Lab-Grown Alternatives</h3>
+                        <p>Food security gets a massive boost as cultivated meats pass rigorous international safety standards and enter supermarkets.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=208" alt="Water Desalination" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#8 • Innovation</span>
+                        <h3>Low-Cost Desalination Breakthrough</h3>
+                        <p>A new graphene-based filter design makes turning seawater into drinking water affordable for developing nations.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=209" alt="Universal Translation" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#9 • AI & Society</span>
+                        <h3>Real-Time Universal Translators Released</h3>
+                        <p>Language barriers disappear as a new wearable tech offers instant, perfectly nuanced translation for 150 languages.</p>
+                    </div>
+                </div>
+
+                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=210" alt="Next Gen EV" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">#10 • Automotive</span>
+                        <h3>Next-Generation Electric Vehicles</h3>
+                        <p>Solid-state battery longevity breakthrough allows new commercial EV models to easily drive 1,000 miles on a single charge.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            let currentTop10Index = 0;
+            const totalTop10Cards = 10;
+
+            function scrollTop10(direction) {
+                const track = document.getElementById('top10-track');
+                const cards = track.querySelectorAll('.article-card');
+                
+                if (cards.length === 0) return;
+
+                const containerWidth = track.parentElement.getBoundingClientRect().width;
+                const cardWidth = cards[0].getBoundingClientRect().width + 20; 
+                const visibleCards = Math.round(containerWidth / cardWidth) || 1;
+                
+                const maxTop10Index = totalTop10Cards - visibleCards;
+
+                currentTop10Index += direction;
+                if (currentTop10Index < 0) currentTop10Index = 0;
+                if (currentTop10Index > maxTop10Index) currentTop10Index = maxTop10Index;
+                
+                track.style.transform = `translateX(-${currentTop10Index * cardWidth}px)`;
             }
-            .interactive-hover-side:hover {
-                border-left-color: #008B8B !important; /* Changes accent bar to Teal */
-                transform: translateX(6px); /* Nudges text elegantly to the right */
-            }
-        </style>
+
+            window.addEventListener('resize', () => {
+                scrollTop10(0); 
+            });
+        </script>
     </section>
 
     <section class="featured-section">
         <div class="section-title">JUAN NEWS</div>
         <div class="featured-grid">
-            
             <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <img src="https://picsum.photos/800/400?random=35" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                 <div class="featured-main-content">
-                    <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
-                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
-                    <div class="featured-meta">Published 2 hours ago • World News</div>
+                    <h2>Community Drives Massive Local River Cleanup</h2>
+                    <p>Residents from five different communities banded together this weekend to restore their local waterways, collecting over 10 tons of plastic waste.</p>
+                    <div class="featured-meta">Community Action • Local Heroes</div>
                 </div>
             </div>
             
             <div class="featured-side">
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
-                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
-                    <div class="featured-card-meta">4 hours ago</div>
+                    <h3>Volunteer Teachers Reach Remote Islands</h3>
+                    <p>A group of fresh graduates dedicates their gap year to educating children in off-grid communities.</p>
+                    <div class="featured-card-meta">Education</div>
                 </div>
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Markets Rally on Strong Economic Data</h3>
-                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
-                    <div class="featured-card-meta">6 hours ago</div>
+                    <h3>The Urban Gardening Movement Grows</h3>
+                    <p>City dwellers are transforming concrete rooftops into thriving communal vegetable gardens.</p>
+                    <div class="featured-card-meta">Sustainability</div>
                 </div>
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Scientific Breakthrough in Medical Research</h3>
-                    <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
-                    <div class="featured-card-meta">8 hours ago</div>
+                    <h3>Local Hero Rescues Stranded Pets</h3>
+                    <p>Meet the tricycle driver who braved recent floodwaters to save over a dozen abandoned animals.</p>
+                    <div class="featured-card-meta">Heartwarming</div>
                 </div>
             </div>
-
         </div>
-
-        <style>
-            .interactive-hover-block:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
-            }
-            .interactive-hover-side:hover {
-                border-left-color: #008B8B !important; /* Changes accent bar to Teal */
-                transform: translateX(6px); /* Nudges text elegantly to the right */
-            }
-        </style>
     </section>
 
     <section class="featured-section" style="margin-bottom: 40px;">
@@ -199,57 +261,44 @@
     <section class="featured-section">
         <div class="section-title">DOKYU</div>
         <div class="featured-grid">
-            
             <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <img src="https://picsum.photos/800/400?random=40" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                 <div class="featured-main-content">
-                    <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
-                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
-                    <div class="featured-meta">Published 2 hours ago • World News</div>
+                    <h2>The Last Frontier: Inside Deep Sea Exploration</h2>
+                    <p>An exclusive, award-winning documentary diving into the uncharted depths of the Pacific Ocean to discover new bioluminescent species.</p>
+                    <div class="featured-meta">Nature • Full Feature</div>
                 </div>
             </div>
             
             <div class="featured-side">
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
-                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
-                    <div class="featured-card-meta">4 hours ago</div>
+                    <h3>Voices of the Mountains</h3>
+                    <p>Exploring the rich, untouched heritage and oral traditions of indigenous highland tribes.</p>
+                    <div class="featured-card-meta">Culture</div>
                 </div>
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Markets Rally on Strong Economic Data</h3>
-                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
-                    <div class="featured-card-meta">6 hours ago</div>
+                    <h3>The Evolution of Street Food</h3>
+                    <p>A cinematic journey tracking how local quick bites evolved into globally recognized delicacies.</p>
+                    <div class="featured-card-meta">Culinary Arts</div>
                 </div>
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Scientific Breakthrough in Medical Research</h3>
-                    <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
-                    <div class="featured-card-meta">8 hours ago</div>
+                    <h3>Architects of the Future</h3>
+                    <p>Inside the minds of visionary engineers building the world's first fully sustainable megacity.</p>
+                    <div class="featured-card-meta">Innovation</div>
                 </div>
             </div>
-
         </div>
-
-        <style>
-            .interactive-hover-block:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
-            }
-            .interactive-hover-side:hover {
-                border-left-color: #008B8B !important; /* Changes accent bar to Teal */
-                transform: translateX(6px); /* Nudges text elegantly to the right */
-            }
-        </style>
     </section>
 
     <section class="featured-section">
         <div class="section-title">My Say</div>
         <div class="featured-card-horizontal">
-            <img src="https://picsum.photos/1000/400?random=21" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <img src="https://picsum.photos/1000/400?random=101" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
             <div class="featured-card-content">
                 <span class="sponsor-tag" style="font-size: 0.8rem; color: #008B8B; font-weight: bold; text-transform: uppercase;">Sponsored Content</span>
-                <h2>The Future of Sustainable Energy in Southeast Asia</h2>
-                <p>Prominent industry leaders outline how public-private partnerships are accelerating green infrastructure to power the next generation of business.</p>
-                <div class="featured-card-meta">By Manuel V. Pangilinan • Business & Innovation</div>
+                <h2>Paving the Way: The Digital Transformation of Philippine Banking</h2>
+                <p>An exclusive look into how major financial institutions are leveraging AI to bring banking to unbanked communities across the archipelago.</p>
+                <div class="featured-card-meta">By Martha Sazon • Business & Tech</div>
                 <a href="#" class="featured-cta-button">Read More</a>
             </div>
         </div>
@@ -259,29 +308,29 @@
         <div class="section-title">DITO PO SA AMIN</div>
         <div class="articles-grid">
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=22" alt="Batanes" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=102" alt="Palawan" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
                     <span class="article-category">Destinations</span>
-                    <h3>The Breathtaking Slopes of Batanes</h3>
-                    <p>Discover why this northern paradise remains a dream destination for eco-conscious travelers looking to disconnect.</p>
-                    <div class="article-time">Regional Pride</div>
+                    <h3>The Untouched Beauty of Coron</h3>
+                    <p>Explore the crystal-clear lakes and towering limestone cliffs that make Palawan a world-class destination.</p>
+                    <div class="article-time">Luzon Pride</div>
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=23" alt="Sinulog" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=103" alt="Davao" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
                     <span class="article-category">Festivals</span>
-                    <h3>Sinulog Festival Returns with Vibrant Energy</h3>
-                    <p>Cebu updates its grand cultural showcase, marrying deep-seated faith with colorful street dancing spectacles.</p>
-                    <div class="article-time">Visayas Pride</div>
+                    <h3>Kadayawan: Celebrating Life and Bounty</h3>
+                    <p>Immerse yourself in Davao's premier festival honoring indigenous cultures and a bountiful harvest.</p>
+                    <div class="article-time">Mindanao Pride</div>
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=24" alt="Pampanga Cuisine" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=104" alt="Bicol" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
                     <span class="article-category">Culinary</span>
-                    <h3>Pampanga's Hidden Kitchen Treasures</h3>
-                    <p>A culinary map exploring why this Central Luzon province strictly holds the title of the Culinary Capital.</p>
+                    <h3>The Spicy Trail of Bicolandia</h3>
+                    <p>A deep dive into the rich, coconut-milk-infused, and fiery dishes that define Bicolano cuisine.</p>
                     <div class="article-time">Luzon Pride</div>
                 </div>
             </div>
@@ -291,93 +340,80 @@
     <section class="featured-section">
         <div class="section-title">KWENTONG KALYE</div>
         <div class="featured-grid">
-            
             <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <img src="https://picsum.photos/800/400?random=105" alt="Street Vendor" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                 <div class="featured-main-content">
-                    <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
-                    <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
-                    <div class="featured-meta">Published 2 hours ago • World News</div>
+                    <h2>Taho, Sweat, and Dreams: The Story of Lito</h2>
+                    <p>Lito has been carrying his taho buckets on the streets of Manila for thirty years to put his three children through college.</p>
+                    <div class="featured-meta">Inspiration • Street Tales</div>
                 </div>
             </div>
             
             <div class="featured-side">
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
-                    <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
-                    <div class="featured-card-meta">4 hours ago</div>
+                    <h3>The Dispatcher of EDSA</h3>
+                    <p>A day in the life of Jun, the favorite transport dispatcher of weary commuters on Taft Avenue.</p>
+                    <div class="featured-card-meta">Street Life</div>
                 </div>
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Markets Rally on Strong Economic Data</h3>
-                    <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
-                    <div class="featured-card-meta">6 hours ago</div>
+                    <h3>Midnight Sweepers: Heroes of the Night</h3>
+                    <p>Meet the dedicated street sweepers who clean the city while most of the metropolis is asleep.</p>
+                    <div class="featured-card-meta">Unsung Heroes</div>
                 </div>
                 <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Scientific Breakthrough in Medical Research</h3>
-                    <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
-                    <div class="featured-card-meta">8 hours ago</div>
+                    <h3>Grandpa Pepito's Pushcart</h3>
+                    <p>How a 70-year-old scrap collector survives and finds joy in the middle of a fast-paced modern Manila.</p>
+                    <div class="featured-card-meta">Survival</div>
                 </div>
             </div>
-
         </div>
-
-        <style>
-            .interactive-hover-block:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
-            }
-            .interactive-hover-side:hover {
-                border-left-color: #008B8B !important; /* Changes accent bar to Teal */
-                transform: translateX(6px); /* Nudges text elegantly to the right */
-            }
-        </style>
     </section>
 
     <section class="articles-section" style="overflow: hidden; position: relative;">
         <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <span>MAY K KA!</span>
             <div class="mayk-carousel-controls" style="display: flex; gap: 8px;">
-                <button onclick="scrollMayK(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">◀</button>
-                <button onclick="scrollMayK(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">▶</button>
+                <button onclick="scrollMayK(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">◀</button>
+                <button onclick="scrollMayK(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">▶</button>
             </div>
         </div>
 
         <div style="width: 100%; overflow: hidden;">
             <div id="mayk-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=71" alt="Labor Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="https://picsum.photos/400/200?random=110" alt="Traffic Laws" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="article-content">
-                        <span class="article-category">Employee Rights</span>
-                        <h3>Know Your Rights: A Guide to the Labor Code on Overtime Pay</h3>
-                        <p>Demystifying regular vs. holiday premium pay rates to make sure you are compensated fairly for every extra hour worked.</p>
+                        <span class="article-category">Traffic Rights</span>
+                        <h3>Contesting a Wrongful Traffic Apprehension</h3>
+                        <p>A step-by-step guide on how to properly dispute an NCAP violation or a wrongful ticket from an enforcer.</p>
                         <div class="article-time">Legal Desk</div>
                     </div>
                 </div>
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=72" alt="Property Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="https://picsum.photos/400/200?random=111" alt="Inheritance" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="article-content">
-                        <span class="article-category">Property Law</span>
-                        <h3>Tenant Rights: Can Your Landlord Suddenly Evict You?</h3>
-                        <p>Understanding the strict protections provided under the Rent Control Act and the proper legal grace periods required.</p>
-                        <div class="article-time">Housing Protections</div>
+                        <span class="article-category">Family Law</span>
+                        <h3>Wills and Inheritance: Who Gets What?</h3>
+                        <p>Understanding the basics of compulsory heirs and the legal distribution of an estate without a will.</p>
+                        <div class="article-time">Estate Planning</div>
                     </div>
                 </div>
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=73" alt="Civil Law" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="https://picsum.photos/400/200?random=112" alt="Scams" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="article-content">
-                        <span class="article-category">Civil Procedures</span>
-                        <h3>Small Claims Court: Settling Money Disputes Fast</h3>
-                        <p>How to legally recover minor outstanding financial debts without hiring expensive lawyers or entering prolonged trials.</p>
-                        <div class="article-time">Legal Remedies</div>
-                    </div>
-                </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=74" alt="Data Privacy" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div class="article-content">
-                        <span class="article-category">Consumer Protection</span>
-                        <h3>Data Privacy Act: Protecting Your Online Info</h3>
-                        <p>What immediate steps you can take when unverified text groups access your private details or spam your mobile inbox.</p>
+                        <span class="article-category">Cybercrime</span>
+                        <h3>Victim of an Online Scam? Here is Your Recourse</h3>
+                        <p>How to work with banks, the NBI Cybercrime Division, and legal channels to recover stolen funds.</p>
                         <div class="article-time">Digital Rights</div>
+                    </div>
+                </div>
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=113" alt="Annulment" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Civil Law</span>
+                        <h3>The Reality of Annulment in the Philippines</h3>
+                        <p>A realistic look into the timeline, costs, and psychological incapacity grounds required for annulment.</p>
+                        <div class="article-time">Family Court</div>
                     </div>
                 </div>
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-box: 0;">
@@ -401,27 +437,27 @@
             </div>
         </div>
 
-        <style>
-            .mayk-carousel-controls button:hover {
-                background: #008B8B !important;
-            }
-        </style>
-
         <script>
             let currentMayKIndex = 0;
             const totalMayKCards = 6;
-            const visibleMayKCards = 2;
-            const maxMayKIndex = totalMayKCards - visibleMayKCards;
-
+            
             function scrollMayK(direction) {
+                const track = document.getElementById('mayk-track');
+                const cards = track.querySelectorAll('.article-card');
+                
+                if (cards.length === 0) return;
+
+                const containerWidth = track.parentElement.getBoundingClientRect().width;
+                const cardWidth = cards[0].getBoundingClientRect().width + 20; 
+                const visibleCards = Math.round(containerWidth / cardWidth) || 1;
+                
+                const maxMayKIndex = totalMayKCards - visibleCards;
+
                 currentMayKIndex += direction;
                 if (currentMayKIndex < 0) currentMayKIndex = 0;
                 if (currentMayKIndex > maxMayKIndex) currentMayKIndex = maxMayKIndex;
                 
-                const track = document.getElementById('mayk-track');
-                const card = track.querySelector('.article-card');
-                const stepWidth = card.getBoundingClientRect().width + 20; 
-                track.style.transform = `translateX(-${currentMayKIndex * stepWidth}px)`;
+                track.style.transform = `translateX(-${currentMayKIndex * cardWidth}px)`;
             }
 
             window.addEventListener('resize', () => {
@@ -433,120 +469,71 @@
     <section class="featured-section">
         <div class="section-title">Love Hurts</div>
         <div class="featured-grid">
-            
-            <div class="featured-main love-hover-main" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=28" alt="Self-Love" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
+                <img src="https://picsum.photos/800/400?random=115" alt="Self-Love" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                 <div class="featured-main-content">
-                    <h2>Reclaiming Identity After a Hard Breakup</h2>
-                    <p>Practical steps to rebuild your confidence, rediscover personal joy, and establish independent milestones when a long-term partner leaves your life.</p>
+                    <h2>Navigating the Storm: Healing from Financial Infidelity</h2>
+                    <p>What happens when hidden debts and secret spending ruin trust? Expert advice on whether a relationship can survive financial betrayal.</p>
                     <div class="featured-meta">Healing • Emotional Wellness</div>
                 </div>
             </div>
             
             <div class="featured-side">
-                <div class="featured-card love-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Is It Time to Walk Away? Red Flags in Romance</h3>
-                    <p>When fighting for a relationship starts costing you your inner peace, mental health, and foundational self-worth.</p>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>The Art of the Apology</h3>
+                    <p>Why saying "I'm sorry you feel that way" does more harm than good in a serious argument.</p>
                     <div class="featured-card-meta">Relationship Advice</div>
                 </div>
-                <div class="featured-card love-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Bridging Time Zones in Long-Distance Love</h3>
-                    <p>Communication adjustments and solid trust milestones that keep overseas partnerships resilient long-term.</p>
-                    <div class="featured-card-meta">LDR Dynamics</div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Setting Boundaries with In-Laws</h3>
+                    <p>How to protect your marriage's peace without starting a full-blown family war.</p>
+                    <div class="featured-card-meta">Family Dynamics</div>
                 </div>
-                <div class="featured-card love-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-                    <h3>Dealing with Toxic Parental Expectations</h3>
-                    <p>How to balance generational filial duties while establishing mature personal boundaries for your own future path.</p>
-                    <div class="featured-card-meta">Family Columns</div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Dating in Your 30s</h3>
+                    <p>Shedding the pressure of societal timelines and finding genuine connection on your own terms.</p>
+                    <div class="featured-card-meta">Modern Love</div>
                 </div>
             </div>
-
         </div>
-
-        <style>
-            .love-hover-main:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(94, 242, 242, 0.2);
-            }
-            .love-hover-side:hover {
-                border-left-color: #008B8B !important;
-                transform: translateX(6px);
-            }
-        </style>
     </section>
 
     <section class="articles-section">
         <div class="section-title">HistorYan</div>
         <div class="articles-grid">
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=61" alt="Liberation of the Philippines" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=120" alt="Cry of Pugad Lawin" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">July 5, 1945</span>
-                    <h3>The Liberation Communique</h3>
+                    <span class="article-category">August 23, 1896</span>
+                    <h3>The Cry of Pugad Lawin</h3>
                     <p style="margin-bottom: 0;">
-                        • Gen. Douglas MacArthur declares the full liberation of the Philippines.<br>
-                        • Official announcement marks the conclusion of major WWII combat operations.<br>
-                        • Honors the combined victory of allied forces and local guerrilla movements.
+                        • Katipuneros, led by Andres Bonifacio, tore their cedulas in defiance of Spanish rule.<br>
+                        • Marked the official beginning of the Philippine Revolution against Spain.<br>
+                        • Remains a symbol of the Filipino people's unyielding desire for independence.
                     </p>
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=62" alt="Founding of the Katipunan" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=121" alt="Ninoy Aquino" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">July 7, 1892</span>
-                    <h3>The Founding of the Katipunan</h3>
+                    <span class="article-category">August 21, 1983</span>
+                    <h3>Assassination of Ninoy Aquino</h3>
                     <p style="margin-bottom: 0;">
-                        • Andres Bonifacio establishes the underground secret society (KKK) in San Nicolas, Manila.<br>
-                        • Formed on the exact day Jose Rizal's exile to Dapitan was made public.<br>
-                        • Marks the pivotal shift from peaceful reform to armed revolution.
+                        • Former Senator Benigno "Ninoy" Aquino Jr. was assassinated upon returning to Manila.<br>
+                        • The event sparked massive nationwide protests against the Marcos administration.<br>
+                        • Served as the primary catalyst that eventually led to the 1986 EDSA People Power Revolution.
                     </p>
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=63" alt="Isabelo de los Reyes" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=122" alt="Plaza Miranda" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">July 7, 1864</span>
-                    <h3>Birth of Isabelo de los Reyes</h3>
+                    <span class="article-category">August 21, 1971</span>
+                    <h3>Plaza Miranda Bombing</h3>
                     <p style="margin-bottom: 0;">
-                        • Born "Don Belong" in Vigan, Ilocos Sur to prominent poetess Leona Florentino.<br>
-                        • Celebrated historically as the "Father of Filipino Socialism."<br>
-                        • Co-founded the Philippine Independent Church (Aglipayan Church).
-                    </p>
-                </div>
-            </div>
-            <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=64" alt="Constitutional Convention" style="width: 100%; height: 200px; object-fit: cover;">
-                <div class="article-content">
-                    <span class="article-category">July 10, 1934</span>
-                    <h3>The 1934 Constitutional Convention</h3>
-                    <p style="margin-bottom: 0;">
-                        • Nationwide election of 202 historic delegates is conducted across the islands.<br>
-                        • Tasked with drafting the framework for the historic 1935 Constitution.<br>
-                        • Laid down the legal foundation for the upcoming Commonwealth Government.
-                    </p>
-                </div>
-            </div>
-            <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=65" alt="Dr. Pio Valenzuela" style="width: 100%; height: 200px; object-fit: cover;">
-                <div class="article-content">
-                    <span class="article-category">July 11, 1869</span>
-                    <h3>Birth of Dr. Pío Valenzuela</h3>
-                    <p style="margin-bottom: 0;">
-                        • Born in Polo, Bulacan—the municipality later renamed Valenzuela City in his honor.<br>
-                        • Served as an essential physician and inner secret chamber leader of the Katipunan.<br>
-                        • Managed the printing and logistics of the revolutionary paper, *Ang Kalayaan*.
-                    </p>
-                </div>
-            </div>
-            <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=66" alt="Gen Pio del Pilar" style="width: 100%; height: 200px; object-fit: cover;">
-                <div class="article-content">
-                    <span class="article-category">July 11, 1860</span>
-                    <h3>Birth of Gen. Pío del Pilar</h3>
-                    <p style="margin-bottom: 0;">
-                        • Born in Culi-culi, San Pedro de Macati (modern-day Pio del Pilar, Makati City).<br>
-                        • Rose to prominence as one of Emilio Aguinaldo's most trusted frontline generals.<br>
-                        • Actively distributed copies of Jose Rizal's *Noli Me Tángere* prior to the uprising.
+                        • Two grenades were thrown onto the stage of a Liberal Party rally in Quiapo, Manila.<br>
+                        • Claimed 9 lives and injured over 90 individuals, including prominent politicians.<br>
+                        • Led President Marcos to temporarily suspend the writ of habeas corpus.
                     </p>
                 </div>
             </div>
@@ -557,47 +544,47 @@
         <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <span>DI-BATE</span>
             <div class="carousel-controls" style="display: flex; gap: 8px;">
-                <button onclick="scrollDebate(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">◀</button>
-                <button onclick="scrollDebate(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">▶</button>
+                <button onclick="scrollDebate(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">◀</button>
+                <button onclick="scrollDebate(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">▶</button>
             </div>
         </div>
 
         <div style="width: 100%; overflow: hidden;">
             <div id="debate-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=51" alt="Jeepney" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="https://picsum.photos/400/200?random=130" alt="POGO" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="article-content">
-                        <span class="article-category">Public Transport</span>
-                        <h3>Jeepney Modernization Program</h3>
-                        <p style="font-style: italic;">"We need safer transport, but down-to-earth drivers shouldn't shoulder extreme debts to acquire units."</p>
-                        <div class="article-time">— Juan, Commuter</div>
+                        <span class="article-category">Economy & Security</span>
+                        <h3>The Total Ban on POGOs</h3>
+                        <p style="font-style: italic;">"The promised economic benefits are not worth the rise in crimes and syndicated activities in our neighborhoods."</p>
+                        <div class="article-time">— Mark, Concerned Citizen</div>
                     </div>
                 </div>
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=52" alt="Office" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div class="article-content">
-                        <span class="article-category">Labor Laws</span>
-                        <h3>The 4-Day Work Week Shift</h3>
-                        <p style="font-style: italic;">"Consolidated hours increase traffic fatigue. I would prefer hybrid flexibility options over longer shifts."</p>
-                        <div class="article-time">— Grace, Office Worker</div>
-                    </div>
-                </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=53" alt="School" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="https://picsum.photos/400/200?random=131" alt="ROTC" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="article-content">
                         <span class="article-category">Education</span>
-                        <h3>Returning to June School Calendar</h3>
-                        <p style="font-style: italic;">"Our classrooms cannot handle extreme peak summer heat. Returning to the traditional timeline protects students."</p>
-                        <div class="article-time">— Teacher Ana, Public School</div>
+                        <h3>Mandatory ROTC in College</h3>
+                        <p style="font-style: italic;">"Discipline should start at home, not forced through a militaristic program with a history of hazing issues."</p>
+                        <div class="article-time">— Leo, University Student</div>
                     </div>
                 </div>
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=54" alt="Plastic Ban" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="https://picsum.photos/400/200?random=132" alt="Charter Change" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="article-content">
-                        <span class="article-category">Urban Living</span>
-                        <h3>Strict Single-Use Plastic Bans</h3>
-                        <p style="font-style: italic;">"Bans only function if markets give affordable alternatives. Right now, alternative items cost consumers more."</p>
-                        <div class="article-time">— Mang Tomas, Market Vendor</div>
+                        <span class="article-category">Politics</span>
+                        <h3>Economic Charter Change</h3>
+                        <p style="font-style: italic;">"Opening up foreign ownership could bring jobs, but we must protect our lands from being completely bought out."</p>
+                        <div class="article-time">— Elena, Small Business Owner</div>
+                    </div>
+                </div>
+                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
+                    <img src="https://picsum.photos/400/200?random=133" alt="Divorce Bill" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="article-content">
+                        <span class="article-category">Social Issues</span>
+                        <h3>Legalizing Divorce in the PH</h3>
+                        <p style="font-style: italic;">"No one marries planning to separate, but trapped spouses need a legal and affordable way out of abusive marriages."</p>
+                        <div class="article-time">— Maria, Women's Rights Advocate</div>
                     </div>
                 </div>
                 <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-box: 0;">
@@ -621,27 +608,27 @@
             </div>
         </div>
 
-        <style>
-            .carousel-controls button:hover {
-                background: #008B8B !important;
-            }
-        </style>
-
         <script>
             let currentDebateIndex = 0;
             const totalDebateCards = 6;
-            const visibleCards = 2;
-            const maxDebateIndex = totalDebateCards - visibleCards;
-
+            
             function scrollDebate(direction) {
+                const track = document.getElementById('debate-track');
+                const cards = track.querySelectorAll('.article-card');
+                
+                if (cards.length === 0) return;
+
+                const containerWidth = track.parentElement.getBoundingClientRect().width;
+                const cardWidth = cards[0].getBoundingClientRect().width + 20; 
+                const visibleCards = Math.round(containerWidth / cardWidth) || 1;
+                
+                const maxDebateIndex = totalDebateCards - visibleCards;
+
                 currentDebateIndex += direction;
                 if (currentDebateIndex < 0) currentDebateIndex = 0;
                 if (currentDebateIndex > maxDebateIndex) currentDebateIndex = maxDebateIndex;
                 
-                const track = document.getElementById('debate-track');
-                const card = track.querySelector('.article-card');
-                const stepWidth = card.getBoundingClientRect().width + 20; 
-                track.style.transform = `translateX(-${currentDebateIndex * stepWidth}px)`;
+                track.style.transform = `translateX(-${currentDebateIndex * cardWidth}px)`;
             }
 
             window.addEventListener('resize', () => {
@@ -701,11 +688,11 @@
             if (open) {
                 sidebar.classList.add('open');
                 overlay.classList.add('open');
-                document.body.style.overflow = 'hidden'; /* Stops background page scrolling while drawer is active */
+                document.body.style.overflow = 'hidden'; 
             } else {
                 sidebar.classList.remove('open');
                 overlay.classList.remove('open');
-                document.body.style.overflow = ''; /* Restores standard page body scroll behavior */
+                document.body.style.overflow = ''; 
             }
         }
     </script>
