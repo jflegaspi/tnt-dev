@@ -20,7 +20,7 @@
                 <a href="technology.html">Technology</a>
                 <a href="podcast.html">Podcasts</a>
                 <a href="opinion.html">Opinyon!</a>
-                <a href="opinion.html">Dokyu</a>
+                <a href="world.html">Dokyu</a>
                 <a href="opinion.html">Atbp</a>
             </nav>
             
@@ -37,8 +37,8 @@
             <a href="business.html" onclick="toggleSidebar(false)">Business</a>
             <a href="technology.html" onclick="toggleSidebar(false)">Technology</a>
             <a href="podcast.html" onclick="toggleSidebar(false)">Podcasts</a>
-            <a href="opinion.html" onclick="toggleSidebar(false)">Reels</a>
-            <a href="opinion.html" onclick="toggleSidebar(false)">Dokyu</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Opinyon!</a>
+            <a href="world.html" onclick="toggleSidebar(false)">Dokyu</a>
             <a href="opinion.html" onclick="toggleSidebar(false)">Atbp</a>
         </nav>
     </div>
@@ -55,8 +55,8 @@
     <section class="featured-section">
         <div class="section-title">BREAKING NEWS</div>
         <div class="featured-grid">            
-            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=25" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-main interactive-hover-block">
+                <img src="https://picsum.photos/800/400?random=25" alt="Featured">
                 <div class="featured-main-content">
                     <h2>Global Summit Addresses Climate Crisis with New Initiatives</h2>
                     <p>World leaders gather to discuss unprecedented environmental challenges and sustainable solutions for the future.</p>
@@ -64,17 +64,17 @@
                 </div>
             </div>
             <div class="featured-side">
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Tech Giants Announce Revolutionary AI Partnership</h3>
                     <p>Major technology companies join forces to develop ethical artificial intelligence standards.</p>
                     <div class="featured-card-meta">4 hours ago</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Markets Rally on Strong Economic Data</h3>
                     <p>Stock indices reach record highs following positive quarterly economic indicators and consumer spending reports.</p>
                     <div class="featured-card-meta">6 hours ago</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Scientific Breakthrough in Medical Research</h3>
                     <p>Researchers announce major advancement in treatment for previously untreatable diseases.</p>
                     <div class="featured-card-meta">8 hours ago</div>
@@ -83,20 +83,20 @@
         </div>
     </section>
 
-    <section class="articles-section" style="overflow: hidden; position: relative;">
-        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <section class="articles-section carousel-section">
+        <div class="section-title carousel-header">
             <span>TOP 10 NEWS</span>
-            <div class="top10-carousel-controls" style="display: flex; gap: 8px;">
-                <button onclick="scrollTop10(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">◀</button>
-                <button onclick="scrollTop10(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">▶</button>
+            <div class="carousel-controls">
+                <button onclick="scrollTop10(-1)">◀</button>
+                <button onclick="scrollTop10(1)">▶</button>
             </div>
         </div>
 
-        <div style="width: 100%; overflow: hidden;">
-            <div id="top10-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
+        <div class="carousel-container">
+            <div id="top10-track" class="carousel-track">
                 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=201" alt="Quantum Computing" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=201" alt="Quantum Computing">
                     <div class="article-content">
                         <span class="article-category">#1 • Technology</span>
                         <h3>Quantum Computing Reaches Commercial Viability</h3>
@@ -104,8 +104,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=202" alt="Renewable Grid" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=202" alt="Renewable Grid">
                     <div class="article-content">
                         <span class="article-category">#2 • Environment</span>
                         <h3>Global Renewable Energy Grid Connected</h3>
@@ -113,8 +113,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=203" alt="Smart Cities" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=203" alt="Smart Cities">
                     <div class="article-content">
                         <span class="article-category">#3 • Urban Planning</span>
                         <h3>Smart Cities Reaching New Milestones</h3>
@@ -122,8 +122,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=204" alt="Space Tourism" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=204" alt="Space Tourism">
                     <div class="article-content">
                         <span class="article-category">#4 • Space Exploration</span>
                         <h3>First Commercial Hotel in Orbit Opens</h3>
@@ -131,8 +131,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=205" alt="Medical Nanobots" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=205" alt="Medical Nanobots">
                     <div class="article-content">
                         <span class="article-category">#5 • Health</span>
                         <h3>Nanobot Trials Show 99% Success Rate</h3>
@@ -140,8 +140,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=206" alt="Ocean Cleanup" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=206" alt="Ocean Cleanup">
                     <div class="article-content">
                         <span class="article-category">#6 • Conservation</span>
                         <h3>Great Pacific Garbage Patch Reduced by Half</h3>
@@ -149,8 +149,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=207" alt="Lab Meat" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=207" alt="Lab Meat">
                     <div class="article-content">
                         <span class="article-category">#7 • Food Science</span>
                         <h3>The Rise of Lab-Grown Alternatives</h3>
@@ -158,8 +158,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=208" alt="Water Desalination" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=208" alt="Water Desalination">
                     <div class="article-content">
                         <span class="article-category">#8 • Innovation</span>
                         <h3>Low-Cost Desalination Breakthrough</h3>
@@ -167,8 +167,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=209" alt="Universal Translation" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=209" alt="Universal Translation">
                     <div class="article-content">
                         <span class="article-category">#9 • AI & Society</span>
                         <h3>Real-Time Universal Translators Released</h3>
@@ -176,8 +176,8 @@
                     </div>
                 </div>
 
-                <div class="article-card" style="flex: 0 0 calc(33.333% - 13.33px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=210" alt="Next Gen EV" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-3-card">
+                    <img src="https://picsum.photos/400/200?random=210" alt="Next Gen EV">
                     <div class="article-content">
                         <span class="article-category">#10 • Automotive</span>
                         <h3>Next-Generation Electric Vehicles</h3>
@@ -190,7 +190,6 @@
 
         <script>
             let currentTop10Index = 0;
-            const totalTop10Cards = 10;
 
             function scrollTop10(direction) {
                 const track = document.getElementById('top10-track');
@@ -202,7 +201,8 @@
                 const cardWidth = cards[0].getBoundingClientRect().width + 20; 
                 const visibleCards = Math.round(containerWidth / cardWidth) || 1;
                 
-                const maxTop10Index = totalTop10Cards - visibleCards;
+                let maxTop10Index = cards.length - visibleCards;
+                if (maxTop10Index < 0) maxTop10Index = 0;
 
                 currentTop10Index += direction;
                 if (currentTop10Index < 0) currentTop10Index = 0;
@@ -220,8 +220,8 @@
     <section class="featured-section">
         <div class="section-title">JUAN NEWS</div>
         <div class="featured-grid">
-            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=35" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-main interactive-hover-block">
+                <img src="https://picsum.photos/800/400?random=35" alt="Featured">
                 <div class="featured-main-content">
                     <h2>Community Drives Massive Local River Cleanup</h2>
                     <p>Residents from five different communities banded together this weekend to restore their local waterways, collecting over 10 tons of plastic waste.</p>
@@ -230,17 +230,17 @@
             </div>
             
             <div class="featured-side">
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Volunteer Teachers Reach Remote Islands</h3>
                     <p>A group of fresh graduates dedicates their gap year to educating children in off-grid communities.</p>
                     <div class="featured-card-meta">Education</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>The Urban Gardening Movement Grows</h3>
                     <p>City dwellers are transforming concrete rooftops into thriving communal vegetable gardens.</p>
                     <div class="featured-card-meta">Sustainability</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Local Hero Rescues Stranded Pets</h3>
                     <p>Meet the tricycle driver who braved recent floodwaters to save over a dozen abandoned animals.</p>
                     <div class="featured-card-meta">Heartwarming</div>
@@ -249,9 +249,9 @@
         </div>
     </section>
 
-    <section class="featured-section" style="margin-bottom: 40px;">
-        <div class="video-container" style="width: 100%; background: #000; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-            <video autoplay loop muted playsinline style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; pointer-events: none;">
+    <section class="featured-section video-section">
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
                 <source src="images/tnt 1-final.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -261,8 +261,8 @@
     <section class="featured-section">
         <div class="section-title">DOKYU</div>
         <div class="featured-grid">
-            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=40" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-main interactive-hover-block">
+                <img src="https://picsum.photos/800/400?random=40" alt="Featured">
                 <div class="featured-main-content">
                     <h2>The Last Frontier: Inside Deep Sea Exploration</h2>
                     <p>An exclusive, award-winning documentary diving into the uncharted depths of the Pacific Ocean to discover new bioluminescent species.</p>
@@ -271,17 +271,17 @@
             </div>
             
             <div class="featured-side">
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Voices of the Mountains</h3>
                     <p>Exploring the rich, untouched heritage and oral traditions of indigenous highland tribes.</p>
                     <div class="featured-card-meta">Culture</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>The Evolution of Street Food</h3>
                     <p>A cinematic journey tracking how local quick bites evolved into globally recognized delicacies.</p>
                     <div class="featured-card-meta">Culinary Arts</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Architects of the Future</h3>
                     <p>Inside the minds of visionary engineers building the world's first fully sustainable megacity.</p>
                     <div class="featured-card-meta">Innovation</div>
@@ -291,11 +291,10 @@
     </section>
 
     <section class="featured-section">
-        <div class="section-title">My Say</div>
         <div class="featured-card-horizontal">
-            <img src="https://picsum.photos/1000/400?random=101" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <img src="https://picsum.photos/1000/400?random=101" alt="Featured">
             <div class="featured-card-content">
-                <span class="sponsor-tag" style="font-size: 0.8rem; color: #008B8B; font-weight: bold; text-transform: uppercase;">Sponsored Content</span>
+                <span class="sponsor-tag">Sponsored Content</span>
                 <h2>Paving the Way: The Digital Transformation of Philippine Banking</h2>
                 <p>An exclusive look into how major financial institutions are leveraging AI to bring banking to unbanked communities across the archipelago.</p>
                 <div class="featured-card-meta">By Martha Sazon • Business & Tech</div>
@@ -308,7 +307,7 @@
         <div class="section-title">DITO PO SA AMIN</div>
         <div class="articles-grid">
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=102" alt="Palawan" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=102" alt="Palawan">
                 <div class="article-content">
                     <span class="article-category">Destinations</span>
                     <h3>The Untouched Beauty of Coron</h3>
@@ -317,7 +316,7 @@
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=103" alt="Davao" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=103" alt="Davao">
                 <div class="article-content">
                     <span class="article-category">Festivals</span>
                     <h3>Kadayawan: Celebrating Life and Bounty</h3>
@@ -326,7 +325,7 @@
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=104" alt="Bicol" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=104" alt="Bicol">
                 <div class="article-content">
                     <span class="article-category">Culinary</span>
                     <h3>The Spicy Trail of Bicolandia</h3>
@@ -340,8 +339,8 @@
     <section class="featured-section">
         <div class="section-title">KWENTONG KALYE</div>
         <div class="featured-grid">
-            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=105" alt="Street Vendor" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-main interactive-hover-block">
+                <img src="https://picsum.photos/800/400?random=105" alt="Street Vendor">
                 <div class="featured-main-content">
                     <h2>Taho, Sweat, and Dreams: The Story of Lito</h2>
                     <p>Lito has been carrying his taho buckets on the streets of Manila for thirty years to put his three children through college.</p>
@@ -350,17 +349,17 @@
             </div>
             
             <div class="featured-side">
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>The Dispatcher of EDSA</h3>
                     <p>A day in the life of Jun, the favorite transport dispatcher of weary commuters on Taft Avenue.</p>
                     <div class="featured-card-meta">Street Life</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Midnight Sweepers: Heroes of the Night</h3>
                     <p>Meet the dedicated street sweepers who clean the city while most of the metropolis is asleep.</p>
                     <div class="featured-card-meta">Unsung Heroes</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Grandpa Pepito's Pushcart</h3>
                     <p>How a 70-year-old scrap collector survives and finds joy in the middle of a fast-paced modern Manila.</p>
                     <div class="featured-card-meta">Survival</div>
@@ -369,19 +368,19 @@
         </div>
     </section>
 
-    <section class="articles-section" style="overflow: hidden; position: relative;">
-        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <section class="articles-section carousel-section">
+        <div class="section-title carousel-header">
             <span>MAY K KA!</span>
-            <div class="mayk-carousel-controls" style="display: flex; gap: 8px;">
-                <button onclick="scrollMayK(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">◀</button>
-                <button onclick="scrollMayK(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">▶</button>
+            <div class="carousel-controls">
+                <button onclick="scrollMayK(-1)">◀</button>
+                <button onclick="scrollMayK(1)">▶</button>
             </div>
         </div>
 
-        <div style="width: 100%; overflow: hidden;">
-            <div id="mayk-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=110" alt="Traffic Laws" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="carousel-container">
+            <div id="mayk-track" class="carousel-track">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=110" alt="Traffic Laws">
                     <div class="article-content">
                         <span class="article-category">Traffic Rights</span>
                         <h3>Contesting a Wrongful Traffic Apprehension</h3>
@@ -389,8 +388,8 @@
                         <div class="article-time">Legal Desk</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=111" alt="Inheritance" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=111" alt="Inheritance">
                     <div class="article-content">
                         <span class="article-category">Family Law</span>
                         <h3>Wills and Inheritance: Who Gets What?</h3>
@@ -398,8 +397,8 @@
                         <div class="article-time">Estate Planning</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=112" alt="Scams" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=112" alt="Scams">
                     <div class="article-content">
                         <span class="article-category">Cybercrime</span>
                         <h3>Victim of an Online Scam? Here is Your Recourse</h3>
@@ -407,8 +406,8 @@
                         <div class="article-time">Digital Rights</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=113" alt="Annulment" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=113" alt="Annulment">
                     <div class="article-content">
                         <span class="article-category">Civil Law</span>
                         <h3>The Reality of Annulment in the Philippines</h3>
@@ -416,8 +415,8 @@
                         <div class="article-time">Family Court</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-box: 0;">
-                    <img src="https://picsum.photos/400/200?random=75" alt="Cyber Libel" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=75" alt="Cyber Libel">
                     <div class="article-content">
                         <span class="article-category">Criminal Law</span>
                         <h3>Cyberlibel Scope: What Counts as Online Defamation?</h3>
@@ -425,8 +424,8 @@
                         <div class="article-time">Social Media Watch</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=76" alt="Lemon Law" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=76" alt="Lemon Law">
                     <div class="article-content">
                         <span class="article-category">Consumer Rights</span>
                         <h3> Lemon Law & Defective Item Return Safeguards</h3>
@@ -439,7 +438,6 @@
 
         <script>
             let currentMayKIndex = 0;
-            const totalMayKCards = 6;
             
             function scrollMayK(direction) {
                 const track = document.getElementById('mayk-track');
@@ -451,7 +449,8 @@
                 const cardWidth = cards[0].getBoundingClientRect().width + 20; 
                 const visibleCards = Math.round(containerWidth / cardWidth) || 1;
                 
-                const maxMayKIndex = totalMayKCards - visibleCards;
+                let maxMayKIndex = cards.length - visibleCards;
+                if (maxMayKIndex < 0) maxMayKIndex = 0;
 
                 currentMayKIndex += direction;
                 if (currentMayKIndex < 0) currentMayKIndex = 0;
@@ -469,8 +468,8 @@
     <section class="featured-section">
         <div class="section-title">Love Hurts</div>
         <div class="featured-grid">
-            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
-                <img src="https://picsum.photos/800/400?random=115" alt="Self-Love" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+            <div class="featured-main interactive-hover-block">
+                <img src="https://picsum.photos/800/400?random=115" alt="Self-Love">
                 <div class="featured-main-content">
                     <h2>Navigating the Storm: Healing from Financial Infidelity</h2>
                     <p>What happens when hidden debts and secret spending ruin trust? Expert advice on whether a relationship can survive financial betrayal.</p>
@@ -479,17 +478,17 @@
             </div>
             
             <div class="featured-side">
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>The Art of the Apology</h3>
                     <p>Why saying "I'm sorry you feel that way" does more harm than good in a serious argument.</p>
                     <div class="featured-card-meta">Relationship Advice</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Setting Boundaries with In-Laws</h3>
                     <p>How to protect your marriage's peace without starting a full-blown family war.</p>
                     <div class="featured-card-meta">Family Dynamics</div>
                 </div>
-                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                <div class="featured-card interactive-hover-side">
                     <h3>Dating in Your 30s</h3>
                     <p>Shedding the pressure of societal timelines and finding genuine connection on your own terms.</p>
                     <div class="featured-card-meta">Modern Love</div>
@@ -502,11 +501,11 @@
         <div class="section-title">HistorYan</div>
         <div class="articles-grid">
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=120" alt="Cry of Pugad Lawin" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=120" alt="Cry of Pugad Lawin">
                 <div class="article-content">
                     <span class="article-category">August 23, 1896</span>
                     <h3>The Cry of Pugad Lawin</h3>
-                    <p style="margin-bottom: 0;">
+                    <p class="no-margin-bottom">
                         • Katipuneros, led by Andres Bonifacio, tore their cedulas in defiance of Spanish rule.<br>
                         • Marked the official beginning of the Philippine Revolution against Spain.<br>
                         • Remains a symbol of the Filipino people's unyielding desire for independence.
@@ -514,11 +513,11 @@
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=121" alt="Ninoy Aquino" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=121" alt="Ninoy Aquino">
                 <div class="article-content">
                     <span class="article-category">August 21, 1983</span>
                     <h3>Assassination of Ninoy Aquino</h3>
-                    <p style="margin-bottom: 0;">
+                    <p class="no-margin-bottom">
                         • Former Senator Benigno "Ninoy" Aquino Jr. was assassinated upon returning to Manila.<br>
                         • The event sparked massive nationwide protests against the Marcos administration.<br>
                         • Served as the primary catalyst that eventually led to the 1986 EDSA People Power Revolution.
@@ -526,11 +525,11 @@
                 </div>
             </div>
             <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=122" alt="Plaza Miranda" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=122" alt="Plaza Miranda">
                 <div class="article-content">
                     <span class="article-category">August 21, 1971</span>
                     <h3>Plaza Miranda Bombing</h3>
-                    <p style="margin-bottom: 0;">
+                    <p class="no-margin-bottom">
                         • Two grenades were thrown onto the stage of a Liberal Party rally in Quiapo, Manila.<br>
                         • Claimed 9 lives and injured over 90 individuals, including prominent politicians.<br>
                         • Led President Marcos to temporarily suspend the writ of habeas corpus.
@@ -540,68 +539,68 @@
         </div>
     </section>
 
-    <section class="articles-section" style="overflow: hidden; position: relative;">
-        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <section class="articles-section carousel-section">
+        <div class="section-title carousel-header">
             <span>DI-BATE</span>
-            <div class="carousel-controls" style="display: flex; gap: 8px;">
-                <button onclick="scrollDebate(-1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">◀</button>
-                <button onclick="scrollDebate(1)" style="background: #333; color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; border-radius: 4px;">▶</button>
+            <div class="carousel-controls">
+                <button onclick="scrollDebate(-1)">◀</button>
+                <button onclick="scrollDebate(1)">▶</button>
             </div>
         </div>
 
-        <div style="width: 100%; overflow: hidden;">
-            <div id="debate-track" style="display: flex; gap: 20px; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform;">
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=130" alt="POGO" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="carousel-container">
+            <div id="debate-track" class="carousel-track">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=130" alt="POGO">
                     <div class="article-content">
                         <span class="article-category">Economy & Security</span>
                         <h3>The Total Ban on POGOs</h3>
-                        <p style="font-style: italic;">"The promised economic benefits are not worth the rise in crimes and syndicated activities in our neighborhoods."</p>
+                        <p class="italic-quote">"The promised economic benefits are not worth the rise in crimes and syndicated activities in our neighborhoods."</p>
                         <div class="article-time">— Mark, Concerned Citizen</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=131" alt="ROTC" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=131" alt="ROTC">
                     <div class="article-content">
                         <span class="article-category">Education</span>
                         <h3>Mandatory ROTC in College</h3>
-                        <p style="font-style: italic;">"Discipline should start at home, not forced through a militaristic program with a history of hazing issues."</p>
+                        <p class="italic-quote">"Discipline should start at home, not forced through a militaristic program with a history of hazing issues."</p>
                         <div class="article-time">— Leo, University Student</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=132" alt="Charter Change" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=132" alt="Charter Change">
                     <div class="article-content">
                         <span class="article-category">Politics</span>
                         <h3>Economic Charter Change</h3>
-                        <p style="font-style: italic;">"Opening up foreign ownership could bring jobs, but we must protect our lands from being completely bought out."</p>
+                        <p class="italic-quote">"Opening up foreign ownership could bring jobs, but we must protect our lands from being completely bought out."</p>
                         <div class="article-time">— Elena, Small Business Owner</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=133" alt="Divorce Bill" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=133" alt="Divorce Bill">
                     <div class="article-content">
                         <span class="article-category">Social Issues</span>
                         <h3>Legalizing Divorce in the PH</h3>
-                        <p style="font-style: italic;">"No one marries planning to separate, but trapped spouses need a legal and affordable way out of abusive marriages."</p>
+                        <p class="italic-quote">"No one marries planning to separate, but trapped spouses need a legal and affordable way out of abusive marriages."</p>
                         <div class="article-time">— Maria, Women's Rights Advocate</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-box: 0;">
-                    <img src="https://picsum.photos/400/200?random=55" alt="AI Class" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=55" alt="AI Class">
                     <div class="article-content">
                         <span class="article-category">Tech & Safety</span>
                         <h3>AI Tools in University Classrooms</h3>
-                        <p style="font-style: italic;">"Banning artificial intelligence completely is impossible. Faculty should focus on changing test designs instead."</p>
+                        <p class="italic-quote">"Banning artificial intelligence completely is impossible. Faculty should focus on changing test designs instead."</p>
                         <div class="article-time">— David, College Student</div>
                     </div>
                 </div>
-                <div class="article-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; margin-bottom: 0;">
-                    <img src="https://picsum.photos/400/200?random=56" alt="Cashless" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-card col-2-card">
+                    <img src="https://picsum.photos/400/200?random=56" alt="Cashless">
                     <div class="article-content">
                         <span class="article-category">Econ Watch</span>
                         <h3>Cashless Markets vs. Hard Cash</h3>
-                        <p style="font-style: italic;">"Digital payments speed up queues, but system outages present heavy blocks for daily micro-transactions."</p>
+                        <p class="italic-quote">"Digital payments speed up queues, but system outages present heavy blocks for daily micro-transactions."</p>
                         <div class="article-time">— Sarah, Small Business Owner</div>
                     </div>
                 </div>
@@ -610,7 +609,6 @@
 
         <script>
             let currentDebateIndex = 0;
-            const totalDebateCards = 6;
             
             function scrollDebate(direction) {
                 const track = document.getElementById('debate-track');
@@ -622,7 +620,8 @@
                 const cardWidth = cards[0].getBoundingClientRect().width + 20; 
                 const visibleCards = Math.round(containerWidth / cardWidth) || 1;
                 
-                const maxDebateIndex = totalDebateCards - visibleCards;
+                let maxDebateIndex = cards.length - visibleCards;
+                if (maxDebateIndex < 0) maxDebateIndex = 0;
 
                 currentDebateIndex += direction;
                 if (currentDebateIndex < 0) currentDebateIndex = 0;

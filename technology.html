@@ -4,129 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology News - TNT News</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class="header-container">
-            <div class="logo"><img src="tnt-new-logo.png" alt="TNT+ Logo"></div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="world.html">World</a>
+            <div class="burger-menu" onclick="toggleSidebar(true)">☰</div>
+            <div class="logo"><a href="index.html"><img src="images/tnt 2 Hi Res.png" alt="TNT+ Logo"></a></div>
+             <nav>
                 <a href="politics.html">Politics</a>
-                <a href="technology.html">Technology</a>
                 <a href="business.html">Business</a>
-                <a href="opinion.html">Opinion</a>
-                <a href="podcast.html">Podcast</a>
+                <a href="technology.html">Technology</a>
+                <a href="podcast.html">Podcasts</a>
+                <a href="opinion.html">Opinyon!</a>
+                <a href="opinion.html">Dokyu</a>
+                <a href="opinion.html">Atbp</a>
             </nav>
             <div class="search-icon">🔍</div>
         </div>
     </header>
 
-    <!-- PAGE HEADER -->
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="close-btn" onclick="toggleSidebar(false)">&times;</div>
+        </div>
+       <nav class="sidebar-nav">
+            <a href="politics.html" onclick="toggleSidebar(false)">Opinyon!</a>
+            <a href="business.html" onclick="toggleSidebar(false)">Business</a>
+            <a href="technology.html" onclick="toggleSidebar(false)">Technology</a>
+            <a href="podcast.html" onclick="toggleSidebar(false)">Podcasts</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Opinyon!</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Dokyu</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Atbp</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar(false)"></div>
+
     <div class="page-header">
         <h1>Technology News</h1>
     </div>
 
-    <!-- FEATURED ARTICLE -->
     <section class="featured-section">
-        <div class="section-title">INNOVATION SPOTLIGHT</div>
-        <div class="featured-card-horizontal">
-            <img src="https://picsum.photos/1000/400?random=21" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
-            <div class="featured-card-content">
-                <h2>AI Revolution Transforms Industry Landscape</h2>
-                <p>Cutting-edge artificial intelligence technologies reshape business operations and consumer experiences worldwide.</p>
-                <div class="featured-card-meta">Published 2 hours ago • Technology</div>
+        <div class="section-title">TECH HIGHLIGHTS</div>
+        <div class="featured-grid">
+            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
+                <img src="https://picsum.photos/800/400?random=151" alt="Featured Tech" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div class="featured-main-content">
+                    <h2>Next-Gen Quantum Processors Reach Consumer Market</h2>
+                    <p>Major tech conglomerates unveil the first commercially viable desktop quantum computers, promising to revolutionize data processing and local cryptography.</p>
+                    <div class="featured-meta">Just Now • Innovation</div>
+                </div>
+            </div>
+            <div class="featured-side">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Global AI Regulation Passed</h3>
+                    <p>International tech committees finally agree on a unified ethical framework for deploying advanced neural networks in public sectors.</p>
+                    <div class="featured-card-meta">2 hours ago</div>
+                </div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>First Commercial Fusion Reactor</h3>
+                    <p>A European startup claims a major breakthrough, successfully sustaining a net-positive nuclear fusion reaction for over 48 hours.</p>
+                    <div class="featured-card-meta">4 hours ago</div>
+                </div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Neuralink Human Trials Expand</h3>
+                    <p>Brain-computer interface technologies receive FDA clearance for wider clinical trials targeting severe mobility impairments.</p>
+                    <div class="featured-card-meta">6 hours ago</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- MAIN ARTICLES GRID -->
-    <section class="articles-section">
-        <div class="section-title">LATEST TECH</div>
-        <div class="articles-grid">
-            <div class="article-card">
-                <div class="article-image">Tech Image</div>
-                <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Quantum Computing Breakthrough Announced</h3>
-                    <p>Scientists achieve new milestone in quantum processing capabilities.</p>
-                    <div class="article-time">1 hour ago</div>
-                </div>
+    <section class="articles-section" style="margin-top: 0;">
+        <div class="slider-header">
+            <h2 class="section-title">MORE IN TECHNOLOGY</h2>
+            <div class="slider-nav">
+                <button onclick="scrollSlider('tech-slider', -1)" aria-label="Previous articles">&#9664;</button>
+                <button onclick="scrollSlider('tech-slider', 1)" aria-label="Next articles">&#9654;</button>
             </div>
+        </div>
+        
+        <div class="articles-slider" id="tech-slider">
             <div class="article-card">
-                <img src="https://picsum.photos/400/150?random=25" alt="Technology" style="width: 100%; height: 150px; object-fit: cover;">
+                <img src="https://picsum.photos/400/200?random=161" alt="Tech News" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>5G Networks Expand Globally</h3>
-                    <p>High-speed connectivity reaches new regions and enables emerging applications.</p>
-                    <div class="article-time">3 hours ago</div>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-image">Tech Image</div>
-                <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Cybersecurity Firms Report Rise in Attacks</h3>
-                    <p>Organizations strengthen defenses against evolving digital threats and vulnerabilities.</p>
-                    <div class="article-time">4 hours ago</div>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-image">Tech Image</div>
-                <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Startup Funding Reaches Record High</h3>
-                    <p>Venture capital investment drives innovation across multiple technology sectors.</p>
-                    <div class="article-time">5 hours ago</div>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-image">Tech Image</div>
-                <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Cloud Computing Market Surges</h3>
-                    <p>Enterprise adoption accelerates as organizations migrate to cloud infrastructure.</p>
-                    <div class="article-time">6 hours ago</div>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-image">Tech Image</div>
-                <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Smartphone Innovation Continues</h3>
-                    <p>Manufacturers introduce advanced features and performance improvements.</p>
-                    <div class="article-time">7 hours ago</div>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-image">Tech Image</div>
-                <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Robotics Industry Advances</h3>
-                    <p>Automation technologies reshape manufacturing and service industries worldwide.</p>
+                    <span class="article-category">Telecommunications</span>
+                    <h3>6G Rollout Begins in Asia</h3>
+                    <p>Telecommunication giants launch the first phase of 6G networks, offering speeds up to 100 times faster than the previous generation.</p>
                     <div class="article-time">8 hours ago</div>
                 </div>
             </div>
             <div class="article-card">
-                <div class="article-image">Tech Image</div>
+                <img src="https://picsum.photos/400/200?random=162" alt="Tech News" style="width: 100%; height: 200px; object-fit: cover;">
                 <div class="article-content">
-                    <span class="article-category">Tech</span>
-                    <h3>Biotech Breakthroughs Emerge</h3>
-                    <p>Genetic engineering and medical technology innovations offer new treatment possibilities.</p>
-                    <div class="article-time">9 hours ago</div>
+                    <span class="article-category">Hardware</span>
+                    <h3>Holographic Displays Go Mainstream</h3>
+                    <p>New consumer-grade monitors utilizing true 3D holographic projection hit the shelves, targeting designers and hardcore gamers.</p>
+                    <div class="article-time">10 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=163" alt="Tech News" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Logistics</span>
+                    <h3>Autonomous Drone Deliveries Approved</h3>
+                    <p>The FAA grants widespread approval for automated drone fleets to handle last-mile deliveries in suburban neighborhoods.</p>
+                    <div class="article-time">12 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=164" alt="Tech News" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Cybersecurity</span>
+                    <h3>Cybersecurity in the AI Age</h3>
+                    <p>Security firms race to develop counter-AI protocols as malicious actors increasingly use machine learning to bypass traditional firewalls.</p>
+                    <div class="article-time">14 hours ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=165" alt="Tech News" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Biotech</span>
+                    <h3>CRISPR Advancements in Agriculture</h3>
+                    <p>Scientists successfully engineer drought-resistant crop variants using advanced CRISPR gene-editing, promising higher yields.</p>
+                    <div class="article-time">Yesterday</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEWSLETTER -->
+    <section class="articles-section">
+        <div class="section-title">LATEST NEWS</div>
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="https://picsum.photos/400/180?random=171" alt="Tech News" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Wearables</span>
+                    <h3>Smart Contacts Enter Clinical Trials</h3>
+                    <p>Augmented reality contact lenses that can monitor glucose levels and display notifications are moving into human testing phases.</p>
+                    <div class="article-time">Yesterday</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/180?random=172" alt="Tech News" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Gaming</span>
+                    <h3>Cloud Gaming Replaces Consoles</h3>
+                    <p>Industry data shows a massive shift as subscription-based cloud gaming overtakes traditional physical console hardware sales.</p>
+                    <div class="article-time">Yesterday</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/180?random=173" alt="Tech News" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Smart Homes</span>
+                    <h3>Matter Standard Achieves Universal Adoption</h3>
+                    <p>The interoperability standard finally unites all major smart home ecosystems, allowing seamless integration across different brands.</p>
+                    <div class="article-time">2 Days Ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/180?random=174" alt="Tech News" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Policy</span>
+                    <h3>Right to Repair Legislation Expands</h3>
+                    <p>More countries adopt sweeping "Right to Repair" laws, forcing tech giants to supply parts and manuals to independent repair shops.</p>
+                    <div class="article-time">2 Days Ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/180?random=175" alt="Tech News" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Space</span>
+                    <h3>Private Space Station Deployed</h3>
+                    <p>A consortium of private aerospace companies successfully deploys the first modules of a commercial low-Earth orbit research station.</p>
+                    <div class="article-time">3 Days Ago</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/180?random=176" alt="Tech News" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Software</span>
+                    <h3>Open Source AI Models Challenge Tech Giants</h3>
+                    <p>A new decentralized, open-source language model matches the performance of proprietary systems, disrupting the industry landscape.</p>
+                    <div class="article-time">3 Days Ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="newsletter-section">
         <div class="newsletter-content">
-            <h2>Subscribe to Tech News</h2>
-            <p>Get the latest updates on innovation, gadgets, and technology trends</p>
+            <h2>Subscribe to Technology News</h2>
+            <p>Stay updated on the latest gadgets, software breakthroughs, and scientific discoveries.</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Enter your email address" required>
                 <button type="submit">Subscribe</button>
@@ -134,11 +205,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="orig-logo.jpeg" alt="TNT+ Logo">
+                <img src="images/tnt 1 Hi Res.png" alt="TNT+ Logo">
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -173,9 +243,39 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 TNT News. All rights reserved.</p>
+            <p>&copy; 2026 TNT News. All rights reserved.</p>
             <p>Follow us on social media for daily updates and exclusive content.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile Sidebar Toggle
+        function toggleSidebar(open) {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            if (open) {
+                sidebar.classList.add('open');
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden'; 
+            } else {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('open');
+                document.body.style.overflow = ''; 
+            }
+        }
+
+        // Horizontal Scroll for Articles Slider
+        function scrollSlider(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const scrollAmount = 380; // Card width (350px) + Gap (30px)
+            
+            if (direction === 1) {
+                slider.scrollLeft += scrollAmount;
+            } else {
+                slider.scrollLeft -= scrollAmount;
+            }
+        }
+    </script>
 </body>
 </html>
