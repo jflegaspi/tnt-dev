@@ -3,497 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politics News - TNT News</title>
+    <title>Opinyon! - TNT News</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        body {
-            background-color: #000;
-            font-family: 'Roboto Condensed', sans-serif;
-            color: #E8DACC;
-            line-height: 1.6;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            background-color: #000000;
-            border-bottom: 3px solid #008B8B;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            height: auto;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #E8DACC;
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff3131;
-        }
-
-        .search-icon {
-            font-size: 20px;
-            color: #E8DACC;
-            cursor: pointer;
-        }
-
-        /* PAGE HEADER */
-        .page-header {
-            background: linear-gradient(135deg, #008B8B 0%, #006666 100%), url('https://picsum.photos/1400/500?random=50');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            color: #E8DACC;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .page-header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* FEATURED ARTICLE SECTION */
-        .featured-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #E8DACC;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #ff3131;
-            display: inline-block;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .featured-main {
-            position: relative;
-            overflow: hidden;
-            border-radius: 5px;
-        }
-
-        .featured-main img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .featured-main-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 40px 30px 30px;
-            color: white;
-        }
-
-        .featured-main-content h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .featured-main-content p {
-            font-size: 14px;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .featured-meta {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .featured-side {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .featured-card {
-            border-left: 4px solid #ff3131;
-            padding-left: 20px;
-        }
-
-        .featured-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.4;
-            color: #E8DACC;
-        }
-
-        .featured-card p {
-            font-size: 13px;
-            color: #E8DACC;
-            margin-bottom: 10px;
-        }
-
-        .featured-card-meta {
-            font-size: 12px;
-            color: #008B8B;
-        }
-
-        /* MAIN ARTICLES GRID */
-        .articles-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .article-card {
-            background-color: #E8DACC;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #008B8B, #006666);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #E8DACC;
-            font-size: 12px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .article-content {
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-
-        .article-category {
-            display: inline-block;
-            background-color: #ff3131;
-            color: white;
-            padding: 4px 10px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
-
-        .article-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.4;
-            color: #E8DACC;
-        }
-
-        .article-card p {
-            font-size: 13px;
-            color: #E8DACC;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .article-time {
-            font-size: 12px;
-            color: #008B8B;
-        }
-
-        /* NEWSLETTER SECTION */
-        .newsletter-section {
-            background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
-            color: #E8DACC;
-            padding: 50px 20px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-section p {
-            font-size: 16px;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 3px;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 14px;
-            background-color: #000;
-            border: 1px solid #333333;
-            color: #E8DACC;
-        }
-
-        .newsletter-form button {
-            padding: 15px 30px;
-            background-color: #ff3131;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background-color: #ff3131;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #000000;
-            color: #E8DACC;
-            padding: 50px 20px;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 80px;
-            margin-bottom: 40px;
-            align-items: flex-start;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .footer-column h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            color: #E8DACC;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-column a {
-            display: block;
-            color: #E8DACC;
-            text-decoration: none;
-            font-size: 13px;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: #008B8B;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333333;
-            padding-top: 30px;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .footer-bottom p {
-            margin-bottom: 15px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 15px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 10px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <div class="header-container">
-            <div class="logo"><img src="tnt-new-logo.png" alt="TNT+ Logo"></div>
+            <div class="burger-menu" onclick="toggleSidebar(true)">☰</div>
+            <div class="logo"><a href="index.html"><img src="images/tnt 2 Hi Res.png" alt="TNT+ Logo"></a></div>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="world.html">World</a>
-                <a href="politics.html">Politics</a>
-                <a href="technology.html">Technology</a>
+                <a href="politics.html">Opinyon!</a>
                 <a href="business.html">Business</a>
-                <a href="opinion.html">Opinion</a>
-                <a href="podcast.html">Podcast</a>
+                <a href="technology.html">Sports</a>
+                <a href="podcast.html">Podcasts</a>
+                <a href="opinion.html">Reels</a>
+                <a href="opinion.html">Dokyu</a>
+                <a href="opinion.html">Atbp</a>
             </nav>
             <div class="search-icon">🔍</div>
         </div>
     </header>
 
+    <!-- MOBILE SIDEBAR -->
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="close-btn" onclick="toggleSidebar(false)">&times;</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="politics.html" onclick="toggleSidebar(false)">Opinyon!</a>
+            <a href="business.html" onclick="toggleSidebar(false)">Business</a>
+            <a href="technology.html" onclick="toggleSidebar(false)">Sports</a>
+            <a href="podcast.html" onclick="toggleSidebar(false)">Podcasts</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Reels</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Dokyu</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Atbp</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar(false)"></div>
+
     <!-- PAGE HEADER -->
     <div class="page-header">
-        <h1>Politics News</h1>
+        <h1>Opinyon!</h1>
     </div>
 
-    <!-- FEATURED ARTICLES -->
+    <!-- PHILIPPINE POLITICS (FEATURED) -->
     <section class="featured-section">
-        <div class="section-title">TOP STORIES</div>
+        <div class="section-title">PHILIPPINE POLITICS</div>
         <div class="featured-grid">
-            <div class="featured-main">
+            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
+                <img src="https://picsum.photos/800/400?random=110" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div class="featured-main-content">
+                    <h2>Impeachment Trial of VP Sara Duterte Resumes in Senate</h2>
+                    <p>The Senate impeachment court, presided by Senator Chiz Escudero, resumes the trial of Vice President Sara Duterte, with the House prosecution expected to begin presenting evidence and call its first witnesses.</p>
+                    <div class="featured-meta">July 7, 2026 • PH Politics</div>
+                </div>
+            </div>
+            <div class="featured-side">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>DFA: Batanes Sovereignty Not Up For Debate</h3>
+                    <p>The Department of Foreign Affairs asserts that the Philippines' sovereignty over Batanes is settled following claims by supposed Chinese scholars that the province belongs to China through Taiwan.</p>
+                    <div class="featured-card-meta">July 10, 2026</div>
+                </div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>Sen. Marcoleta Remains Under PNP Custody</h3>
+                    <p>Senator Rodante Marcoleta remains at the PNP General Hospital due to an unstable medical condition following his arrest over a plunder case involving an undeclared PHP 75 million campaign donation.</p>
+                    <div class="featured-card-meta">July 9, 2026</div>
+                </div>
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
+                    <h3>ADB Slashes PH Economic Growth Forecast</h3>
+                    <p>The Asian Development Bank cut its 2026 GDP growth projection for the Philippines to 3.8% due to delayed investments and softer private consumption amid higher commodity prices.</p>
+                    <div class="featured-card-meta">July 9, 2026</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MORE IN PHILIPPINES (NAVIGATIONAL CAROUSEL) -->
+    <section class="articles-section" style="margin-top: 0;">
+        <div class="slider-header">
+            <h2 class="section-title">MORE IN PHILIPPINES</h2>
+            <div class="slider-nav">
+                <button onclick="scrollSlider('ph-slider', -1)" aria-label="Previous articles">&#9664;</button>
+                <button onclick="scrollSlider('ph-slider', 1)" aria-label="Next articles">&#9654;</button>
+            </div>
+        </div>
+        
+        <div class="articles-slider" id="ph-slider">
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=111" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Government</span>
+                    <h3>DepEd Postpones School Safety Drills</h3>
+                    <p>The Department of Education has postponed the National Safe Schools Summit and Safety Drill in Manila to ensure learners' well-being amid class suspensions caused by Typhoon Inday and the enhanced southwest monsoon.</p>
+                    <div class="article-time">July 10, 2026</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=112" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Agriculture</span>
+                    <h3>Gov't Targets 380 Mechanical Dryers for 2027</h3>
+                    <p>In a push for better agricultural infrastructure, the Department of Agriculture aims to deploy 380 mechanical dryers for the 2027 harvest season to support local farmers.</p>
+                    <div class="article-time">July 10, 2026</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=113" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Energy</span>
+                    <h3>ERC Prepares Rules for RE Adoption</h3>
+                    <p>The Energy Regulatory Commission is drafting new rules to boost the utilization of renewable energy in off-grid areas, aiming to lower power costs nationwide.</p>
+                    <div class="article-time">July 9, 2026</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=114" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Elections</span>
+                    <h3>Comelec Releases New Guidelines for 2028</h3>
+                    <p>The Commission on Elections details updated automated polling systems and earlier filing deadlines in preparation for the upcoming 2028 national elections.</p>
+                    <div class="article-time">July 8, 2026</div>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://picsum.photos/400/200?random=115" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="article-content">
+                    <span class="article-category">Health</span>
+                    <h3>DOH Reports Slight Decrease in Dengue Cases</h3>
+                    <p>Following preemptive cleanup drives by LGUs nationwide, the Department of Health logs a minor but encouraging drop in active dengue cases heading into the peak rainy season.</p>
+                    <div class="article-time">July 8, 2026</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL POLITICS (FEATURED) -->
+    <section class="featured-section">
+        <div class="section-title">GLOBAL POLITICS</div>
+        <div class="featured-grid">
+            <div class="featured-main interactive-hover-block" style="transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border-radius: 5px;">
                 <img src="https://picsum.photos/800/400?random=54" alt="Featured" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                 <div class="featured-main-content">
                     <h2>Legislative Session Debates Major Policy Changes</h2>
@@ -502,17 +153,17 @@
                 </div>
             </div>
             <div class="featured-side">
-                <div class="featured-card">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
                     <h3>Political Endorsements Shake Up Campaign Trail</h3>
                     <p>Key figures announce their positions, influencing campaign dynamics and voter sentiment nationwide.</p>
                     <div class="featured-card-meta">45 minutes ago</div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
                     <h3>Budget Negotiations Reach Critical Stage</h3>
                     <p>Lawmakers work late into the night to reach compromise on spending priorities and revenue measures.</p>
                     <div class="featured-card-meta">2 hours ago</div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card interactive-hover-side" style="transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer;">
                     <h3>Public Opinion Polls Show Shifting Preferences</h3>
                     <p>Latest surveys reveal changing voter attitudes on key issues affecting the upcoming electoral cycle.</p>
                     <div class="featured-card-meta">4 hours ago</div>
@@ -521,9 +172,9 @@
         </div>
     </section>
 
-    <!-- MAIN ARTICLES GRID -->
+    <!-- GLOBAL DEVELOPMENTS (STANDARD GRID) -->
     <section class="articles-section">
-        <div class="section-title">LATEST DEVELOPMENTS</div>
+        <div class="section-title">GLOBAL DEVELOPMENTS</div>
         <div class="articles-grid">
             <div class="article-card">
                 <img src="https://picsum.photos/400/200?random=51" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
@@ -552,15 +203,6 @@
                     <div class="article-time">6 hours ago</div>
                 </div>
             </div>
-            <div class="article-card">
-                <img src="https://picsum.photos/400/200?random=54" alt="Politics" style="width: 100%; height: 200px; object-fit: cover;">
-                <div class="article-content">
-                    <span class="article-category">Politics</span>
-                    <h3>Administration Announces Initiative on Infrastructure</h3>
-                    <p>Government unveils comprehensive plan to modernize transportation and utilities nationwide.</p>
-                    <div class="article-time">8 hours ago</div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -580,7 +222,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="orig-logo.jpeg" alt="TNT+ Logo">
+                <img src="images/tnt 1 Hi Res.png" alt="TNT+ Logo">
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -615,9 +257,40 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 TNT News. All rights reserved.</p>
+            <p>&copy; 2026 TNT News. All rights reserved.</p>
             <p>Follow us on social media for daily updates and exclusive content.</p>
         </div>
     </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Sidebar Toggle
+        function toggleSidebar(open) {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            if (open) {
+                sidebar.classList.add('open');
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden'; 
+            } else {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('open');
+                document.body.style.overflow = ''; 
+            }
+        }
+
+        // Horizontal Scroll for Articles Slider
+        function scrollSlider(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const scrollAmount = 380; // Card width (350px) + Gap (30px)
+            
+            if (direction === 1) {
+                slider.scrollLeft += scrollAmount;
+            } else {
+                slider.scrollLeft -= scrollAmount;
+            }
+        }
+    </script>
 </body>
 </html>
