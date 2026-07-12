@@ -6,21 +6,7 @@
     <title>World News - TNT News</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Page-specific responsive layout for the In Depth section */
-        .featured-grid.world-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-        
-        /* Mobile override to stack the columns */
-        @media (max-width: 768px) {
-            .featured-grid.world-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+   
 </head>
 <body>
     <!-- HEADER -->
@@ -28,13 +14,14 @@
         <div class="header-container">
             <div class="burger-menu" onclick="toggleSidebar(true)">☰</div>
             <div class="logo"><a href="index.html"><img src="images/tnt 2 Hi Res.png" alt="TNT+ Logo"></a></div>
-            <nav>
-                <a href="world.html">World</a>
+             <nav>
                 <a href="politics.html">Politics</a>
                 <a href="business.html">Business</a>
                 <a href="technology.html">Technology</a>
                 <a href="podcast.html">Podcasts</a>
-                <a href="opinion.html">Opinion</a>
+                <a href="opinion.html">Opinyon!</a>
+                <a href="world.html">Dokyu</a>
+                <a href="opinion.html">Atbp</a>
             </nav>
             <div class="search-icon">🔍</div>
         </div>
@@ -46,12 +33,13 @@
             <div class="close-btn" onclick="toggleSidebar(false)">&times;</div>
         </div>
         <nav class="sidebar-nav">
-            <a href="world.html" onclick="toggleSidebar(false)">World</a>
             <a href="politics.html" onclick="toggleSidebar(false)">Politics</a>
             <a href="business.html" onclick="toggleSidebar(false)">Business</a>
             <a href="technology.html" onclick="toggleSidebar(false)">Technology</a>
             <a href="podcast.html" onclick="toggleSidebar(false)">Podcasts</a>
-            <a href="opinion.html" onclick="toggleSidebar(false)">Opinion</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Opinyon!</a>
+            <a href="world.html" onclick="toggleSidebar(false)">Dokyu</a>
+            <a href="opinion.html" onclick="toggleSidebar(false)">Atbp</a>
         </nav>
     </div>
     <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar(false)"></div>

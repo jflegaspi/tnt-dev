@@ -20,7 +20,7 @@ body {
    ========================================== */
 header {
     background-color: #000000;
-    border-bottom: 3px solid #008B8B;
+    border-bottom: 3px solid #ff3131;
     padding: 0;
     position: sticky;
     top: 0;
@@ -79,7 +79,7 @@ nav a:hover {
    HERO / PAGE HEADER
    ========================================== */
 .hero, .page-header {
-    background: linear-gradient(135deg, #008B8B 0%, #006666 100%), url('https://picsum.photos/1400/500?random=0');
+    background: linear-gradient(135deg, #008B8B 0%, #ff3131 100%), url('https://picsum.photos/1400/500?random=0');
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
@@ -125,6 +125,7 @@ nav a:hover {
     font-weight: 700;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    color: #008080;
     position: relative;
     z-index: 2;
 }
@@ -140,7 +141,7 @@ nav a:hover {
    ========================================== */
 .cta-button, .featured-cta-button {
     display: inline-block;
-    background-color: #008B8B;
+    background-color: #ff3131;
     color: #fff;
     padding: 15px 40px;
     text-decoration: none;
@@ -174,10 +175,10 @@ nav a:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #E8DACC;
+    color: #008080;
     margin-bottom: 30px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #5ef2f2;
+    border-bottom: 3px solid #ff3131;
     display: inline-block;
 }
 
@@ -247,7 +248,7 @@ nav a:hover {
 }
 
 .featured-card {
-    border-left: 4px solid #5ef2f2;
+    border-left: 4px solid #ff3131;
     padding-left: 20px;
 }
 
@@ -268,7 +269,7 @@ nav a:hover {
 
 .featured-card-meta {
     font-size: 11px;
-    color: #008B8B;
+    color: #ff3131;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -326,7 +327,7 @@ nav a:hover {
 
 .article-category {
     display: inline-block;
-    background-color: #008B8B;
+    background-color: #ff3131;
     color: #fff;
     padding: 4px 10px;
     font-size: 11px;
@@ -365,7 +366,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #5ef2f2;
+    border-bottom: 3px solid #ff3131;
     margin-bottom: 30px;
     padding-bottom: 10px;
 }
@@ -777,7 +778,7 @@ footer {
 
 .sponsor-tag {
     font-size: 0.8rem;
-    color: #008B8B;
+    color: #ff3131;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -882,3 +883,16 @@ footer {
 .italic-quote {
     font-style: italic;
 }
+
+.featured-grid.world-layout {
+        display: grid;
+         grid-template-columns: 2fr 1fr;
+         gap: 30px;
+    }
+        
+        /* Mobile override to stack the columns */
+    @media (max-width: 768px) {
+    .featured-grid.world-layout {
+            grid-template-columns: 1fr;
+        }
+    }
