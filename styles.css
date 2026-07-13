@@ -125,7 +125,7 @@ nav a:hover {
     font-weight: 700;
     margin-bottom: 20px;
     letter-spacing: 1px;
-    color: #008080;
+    color: #91fbfb;
     position: relative;
     z-index: 2;
 }
@@ -175,7 +175,7 @@ nav a:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #008080;
+    color: #91fbfb;
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 3px solid #ff3131;
@@ -219,7 +219,6 @@ nav a:hover {
     right: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
     padding: 40px 30px 30px;
-    color: #E8DACC;
 }
 
 .featured-main-content h2 {
@@ -228,6 +227,7 @@ nav a:hover {
     font-weight: 700;
     margin-bottom: 15px;
     line-height: 1.3;
+    color: #91fbfb;
 }
 
 .featured-main-content p {
@@ -257,7 +257,7 @@ nav a:hover {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #E8DACC;
+    color: #91fbfb;
     line-height: 1.4;
 }
 
